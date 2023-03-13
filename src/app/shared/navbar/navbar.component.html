@@ -1,0 +1,63 @@
+<!-- <p>navbar works!</p> -->
+
+
+<div class="container menu">
+    <div class="row top">
+    <div class="navbar col-12 ">
+        <div class="logo"><h1>La caserita</h1></div>
+        <ul class="links ">
+            <li><a [routerLink]="['']">Home</a></li>
+            <li><a href="favoritos">Favoritos</a></li>
+            <li><a href="productos">Productos típicos |</a></li>
+            <li><a href=""><i class="bi bi-search"></i></a></li>
+        </ul>
+        <a class="action_btn"
+             *ngIf="!isLogged"
+            [routerLink]="['account/login']">Login</a>
+            <a  *ngIf="isLogged" class='action_btn  m-1 '
+          (click)="loginOut()" [routerLink]="['']">
+          Log out
+          </a>
+
+          <!-- poner el registro como un llamado en suscripcion -->
+        <!--   <a  *ngIf="!isLogged" class='action_btn  '
+          [routerLink]="['account/register']">
+          Registrarse
+          </a> -->
+
+        <div class="toggle_btn " (click)="showPanel()">
+            <span class="navbar-toggler-icon "></span>
+        </div>
+
+
+
+        
+    </div>
+<!--      <div  *ngIf="child" class="dropdown_menu " >
+        <li><a [routerLink]="['']">Home</a></li>
+        <li><a href="suscrpcion">Suscripcion</a></li>
+        <li><a href="favoritos">Favoritos</a></li>
+        <li><a href="productos">Productos típicos</a></li>
+        <li><a href="#" class="action_btn">Login</a></li>
+        
+    </div>  -->
+
+    </div>
+</div>
+
+<div class="container d-flex justify-content-end">
+    <div class="row ">
+        <div class="col-12 ">
+            <div  *ngIf="child" class="dropdown_menu " >
+                <li><a href="hero">Home</a></li>
+                <li><a href="suscrpcion">Suscripcion</a></li>
+                <li><a href="favoritos">Favoritos</a></li>
+                <li><a href="productos">Productos típicos</a></li>
+                <li><a href="#" class="action_btn">Login</a></li>
+                
+            </div>
+        </div>
+
+    </div>
+
+</div> 

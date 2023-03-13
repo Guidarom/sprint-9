@@ -1,0 +1,16 @@
+h1{
+    font-family: 'Galada', cursive;
+}
+.dropdown_menu{
+    /* display: none; */
+   /*  position: absolute; */
+    right: 2rem;
+    top: 60px;
+  /*   height: 0; */
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

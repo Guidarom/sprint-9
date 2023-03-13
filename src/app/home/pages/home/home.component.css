@@ -1,0 +1,16 @@
+/* .container{
+    /* background-color: black;  */
+    /* background-image: url('../../../../assets/ORFF0J0.jpg');  
+}  */
+/* .card {
+    background-image: url('../../../../assets/pasta-espagueti-e-ingredientes-frescos-sobre-mesa-blanca.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+} */
+
+img{
+    max-width: 520px;
+    height: auto;
+    /* padding: 20px; */
+}

@@ -1,0 +1,134 @@
+ * {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open-sans','sans-serif';
+} 
+h1{
+    font-family: 'Galada', cursive;
+}
+.menu{
+    max-width: 1500px;
+    height:fit-content
+}
+li{
+    list-style: none;
+}
+li:hover{
+    text-decoration: underline;
+    text-decoration-color: green;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+/* a:hover{
+    color: green;
+    
+} */
+
+.top{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1,5rem;
+    font-weight: bold;
+}
+.navbar .links {
+    display: flex;
+    padding-right: 10rem;
+    gap: 4rem; 
+}
+
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: green;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+
+/* dropdown menu */
+
+.dropdown_menu{
+    display: none;
+    right: 1rem;
+    top: 60px;
+    height: 240px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* .dropdown_menu.open{
+    height: 240px;
+
+} */
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+/* responsive design */
+@media(max-width:800px){
+
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    } 
+    /* .navbar .links {
+        display: none !important;
+    } */
+
+    .navbar .toggle_btn{
+        
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
