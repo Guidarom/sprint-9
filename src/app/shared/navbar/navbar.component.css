@@ -52,7 +52,8 @@ a{
 }
 .navbar .links {
     display: flex;
-    padding-right: 10rem;
+    justify-content: center;
+     padding-right: 10rem; 
     gap: 4rem; 
 }
 
@@ -114,7 +115,7 @@ a{
     justify-content: center;
 }
 /* responsive design */
-@media(max-width:800px){
+@media(max-width:900px){
 
     .navbar .links,
     .navbar .action_btn{

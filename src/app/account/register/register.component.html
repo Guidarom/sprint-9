@@ -1,52 +1,54 @@
-<p>register works!</p>
-<div class="row align-content-center fixed-top py-5  ">
-    <div class="col-11 mx-auto py-4" style="max-width: 450px;">
-        <div class="card  text-white bg-dark h-100">
-            <div class="card-header text-center text-warning row">
-                <div class="col-9 col-sm-10">
-                    <h3>Create your account</h3>
+<div class="container ">
+    <div class="row align-content-star justify-content-end py-5 bg-food ">
+        <div class="col-11  py-4 " style="max-width: 450px;">
+            <div class="card  text-white bg-success h-100">
+                <div class=" text-center row">
+                    <div class="col-9 col-sm-10">
+                        <h3>Crea tu cuenta</h3>
+                    </div>
+                    <div class="col-3 col-sm-2">
+                        <a  class=' btn border-white text-end text-white m-1 '
+                            [routerLink]="['']">
+                        X
+                        </a>
+                    </div>  
                 </div>
-                <div class="col-3 col-sm-2">
-                    <a  class=' btn border-white text-end text-white m-1 '
-                        [routerLink]="['']">
-                    X
-                    </a>
-                </div>  
-            </div>
-            <div class="card-body">
-                <form [formGroup] ="signupForm" (ngSubmit)="send()"  class="g-3">
-                    <div class="form-group my-3">
-                        <input  
-                                type="text" 
-                                formControlName="name"
-                                class="form-control" 
-                                placeholder="your name" >
-                                
-                    </div>
-                    <div class="form-group my-3">
-                        <input  
-                                type="email" 
-                                formControlName="email"                                                                     
-                                class="form-control" 
-                                placeholder="exemple@mail.com" >
-                                <span class="form-text text-danger mt-0 mb-0"
-                                      *ngIf="required('email')">Please enter a correct email</span>
-                                
-                    </div>
-                    <div class="form-group my-3">
-                        <input 
-                                type="password" 
-                                formControlName="password"                                   
-                                class="form-control" 
-                                placeholder="Password" >
-                                <span class="form-text text-danger mt-0 mb-0"
-                                      *ngIf="required('password')">Please enter a correct password</span>
-                    </div>
-                    <div class="text-center col-12">
-                        <button  type="submit" class="btn btn-warning btn-block" >Create Account</button>
-                    </div>
-                </form>
+                <div class="card-body">
+                    <form [formGroup] ="signupForm" (ngSubmit)="send()"  class="g-3">
+                        <div class="form-group my-3">
+                            <input  
+                                    type="text" 
+                                    formControlName="name"
+                                    class="form-control" 
+                                    placeholder="your name" >
+                                    
+                        </div>
+                        <div class="form-group my-3">
+                            <input  
+                                    type="email" 
+                                    formControlName="email"                                                                     
+                                    class="form-control" 
+                                    placeholder="exemple@mail.com" >
+                                    <span class="form-text text-danger mt-0 mb-0"
+                                          *ngIf="required('email')">Please enter a correct email</span>
+                                    
+                        </div>
+                        <div class="form-group my-3">
+                            <input 
+                                    type="password" 
+                                    formControlName="password"                                   
+                                    class="form-control" 
+                                    placeholder="Password" >
+                                    <span class="form-text text-danger mt-0 mb-0"
+                                          *ngIf="required('password')">Please enter a correct password</span>
+                        </div>
+                        <div class="text-center col-12">
+                            <button  type="submit" class="btn btn-warning btn-block" >Create Account</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
 </div>

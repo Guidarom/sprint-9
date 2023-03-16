@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { RecypesComponent } from './pages/recypes/recypes.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ProductsComponent,
+    RecypesComponent
   ],
   imports: [
     CommonModule,
