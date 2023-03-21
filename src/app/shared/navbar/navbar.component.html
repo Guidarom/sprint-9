@@ -11,7 +11,7 @@
             
             <li><a [routerLink]="['']">Home</a></li>
             <li><a [routerLink]="['recipes']">Recetas</a></li>
-            <li><a [routerLink]="['recipes']">Favoritos</a></li>
+            <li><a [routerLink]="['favorites']">Favoritos</a></li>
             <li><a [routerLink]="['products']">Productos típicos</a></li>
             <li><a [routerLink]="['']"><i class="bi bi-search"></i></a></li>
         </ul>
@@ -55,9 +55,9 @@
             <div  *ngIf="child" class="dropdown_menu " >
                 <li><a [routerLink]="['']" (click)="showPanel()" >Home</a></li>
                 <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
-                <li><a href="favoritos">Favoritos</a></li>
+                <li><a [routerLink]="['favorites']" (click)="showPanel()">Favoritos</a></li>
                 <li><a [routerLink]="['products']" (click)="showPanel()">Productos típicos</a></li>
-                <li><a href="#" class="action_btn">Login</a></li>
+                <li><a [routerLink]="['account/login']" class="action_btn" (click)="showPanel()">Login</a></li>
                 
             </div>
         </div>

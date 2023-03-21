@@ -12,6 +12,9 @@ export class FavsService {
     this.favsList.push(id)
     console.log(this.favsList)
   }
+  deleteFavorites(){
+    console.log('delete works')
+  }
 
 
 

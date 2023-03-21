@@ -12,18 +12,32 @@ export class FavoritesComponent implements OnInit{
   get favList(){
     return this.favsService.favsList
   }
-  private realFavList:any[]=[]
+  set favList(value){
+    this.favsService.favsList =value
+  }
+  public realFavList:any[]=[]
+  private recipesList:any
 
   constructor(private favsService:FavsService,
               private recipesService:RecipesService){}
 
 
   ngOnInit(): void {
-    this.recipesService.getRecipesList()
+    this.getRecipesList()
     
     
   }
+  getRecipesList(){
+    this.recipesService.getRecipesList()
+    .subscribe((data) => {
+      this.recipesList=data
+      this.realFavList=this.recipesList.filter((data:any)=> this.favList.includes(data.id))
+      console.log(this.realFavList)
+       // Aquí puedes trabajar con los datos obtenidos
+    }); 
+  }
 
+  
   
 
 

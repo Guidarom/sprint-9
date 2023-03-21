@@ -1,4 +1,33 @@
-<p>favorites works!</p>
+
+<div class="container">
+    <div class="row justify-content-center"
+          *ngIf="realFavList">
+      <!-- Repeat this card block for each recipe in your JSON file -->
+      <div class="col-12  col-lg-8 mb-4 card-recipe"
+            [routerLink]="['/info-recipe/' ,recipe.id]" 
+            *ngFor=" let recipe of realFavList; let i=index" >
+        <div class="card ">
+          <div class="row no-gutters">
+            <div class="col-8">
+              <div class="card-body p-2">
+                <h5 class="card-title">{{recipe.nombre}}</h5>
+                <!-- <p class="card-text">{{recipe.descripcion}}</p>  -->
+                <div class="d-flex ">
+                    <p class="card-text me-3"><i class="bi bi-person"></i>{{recipe.porciones}}</p>
+                    <p class="card-text"><i class="bi bi-clock"></i> {{recipe.tiempoPreparacion}} min</p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of card block -->
+    </div>
+  </div>
+  
 
 
 
