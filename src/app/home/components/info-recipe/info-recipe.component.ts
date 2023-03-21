@@ -44,8 +44,12 @@ export class InfoRecipeComponent implements OnInit{
   }
 
   saveFavorites(){
-    this.favsService.saveFavs(this.id)
+    this.favsService.saveFavs(this.id);
     
+  }
+
+  deleteFavorites(){
+    this.favsService.deleteFavorites();
   }
 
 
