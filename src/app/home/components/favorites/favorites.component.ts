@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FavsService } from '../../_services/favs.service';
-import { RecipesService } from '../../_services/recipes.service';
+import { FavsService } from '../../../_services/favs.service';
+import { RecipesService } from '../../../_services/recipes.service';
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
 })
-export class FavoritesComponent implements OnInit{
+export class FavoritesComponent implements OnInit {
 
   get favList(){
     return this.favsService.favsList
@@ -32,13 +32,8 @@ export class FavoritesComponent implements OnInit{
     .subscribe((data) => {
       this.recipesList=data
       this.realFavList=this.recipesList.filter((data:any)=> this.favList.includes(data.id))
-      console.log(this.realFavList)
+      
        // Aquí puedes trabajar con los datos obtenidos
     }); 
   }
-
-  
-  
-
-
 }

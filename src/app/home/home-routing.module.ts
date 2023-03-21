@@ -4,7 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { InfoRecipeComponent } from './components/info-recipe/info-recipe.component';
-import { FavoritesComponent } from '../components/favorites/favorites.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 
 const routes: Routes = [

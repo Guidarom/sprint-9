@@ -9,11 +9,15 @@ export class FavsService {
   constructor() { }
 
   saveFavs(id:number){
-    this.favsList.push(id)
-    console.log(this.favsList)
+    if (!this.favsList.includes(id)){
+      this.favsList.push(id)
+      console.log(this.favsList)
+    }
+    
   }
-  deleteFavorites(){
-    console.log('delete works')
+  removeFromFavs(id:number){
+    this.favsList.splice(id,1)
+    console.log(this.favsList)
   }
 
 

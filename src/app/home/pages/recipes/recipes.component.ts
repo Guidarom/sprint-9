@@ -44,7 +44,7 @@ export class RecipesComponent implements OnInit{
     this.recipesService.getRecipesList()
     .subscribe(data => {
       this.recipesList=data
-      console.log(this.recipesList) // Aquí puedes trabajar con los datos obtenidos
+       // Aquí puedes trabajar con los datos obtenidos
     }); 
     
  // Aquí puedes trabajar con los datos obtenidos

@@ -15,6 +15,7 @@ export class InfoRecipeComponent implements OnInit{
 
   public currentRecipe: any
   private recipesList:any
+
   /*  */id: number= 0
 
 /*  get recipesList(){
@@ -24,6 +25,11 @@ export class InfoRecipeComponent implements OnInit{
   constructor(private recipesService:RecipesService,
               private favsService:FavsService,
               private activatedRoute: ActivatedRoute, ){}
+
+  get favsList(){
+    return this.favsService.favsList
+  }
+  
 
 
   ngOnInit(): void {
@@ -48,8 +54,10 @@ export class InfoRecipeComponent implements OnInit{
     
   }
 
-  deleteFavorites(){
-    this.favsService.deleteFavorites();
+  removeFromFavs(id:number){
+    const index = this.favsList.findIndex(e=> id===e)
+    console.log(index)
+    this.favsService.removeFromFavs(index);
   }
 
 
