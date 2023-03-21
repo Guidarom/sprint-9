@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "nombre": "Salteñas",
+        "imagen": "../../../../assets/imagenes recetas/salteña.jpg",
+        "descripcion": "Empanadas bolivianas rellenas de carne, verduras y especias.",
+        "tiempoPreparacion": 60,
+        "ingredientes": [
+            "2kg Harina",
+            "1kg Carne de res",
+            "5 Papas",
+            "1 Zanahoria",
+            "2 Cebollas",
+            "Comino",
+            "Pimienta",
+            "50 Aceitunas",
+            "8 Huevos"
+        ],
+        "pasos": [
+            "Mezclar la harina con sal y agua para hacer la masa.",
+            "Cocinar la carne de res, la papa, la zanahoria y la cebolla con comino y pimienta.",
+            "Agregar las aceitunas y los huevos cocidos a la mezcla de carne.",
+            "Armar las empanadas y hornearlas en el horno hasta que estén doradas."
+        ],
+        "porciones": 60,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 2,
+        "nombre": "Silpancho",
+        "imagen": "../../../../assets/imagenes recetas/silpancho-image_web.jpg",
+        "descripcion": "Esta receta de silpancho es una típica y contundente preparación originaria de Cochabamba, ciudad de Bolivia, aunque hoy en día podemos encontrarla en todo el país debido a su popularidad.",
+        "tiempoPreparacion": 45,
+        "ingredientes": [
+            "500g Carne de res",
+            "Harina",
+            "10 Huevos",
+            "5 tasas Arroz",
+            "3kg Papas",
+            "1 Cebolla",
+            "2 Tomate",
+            "Ají",
+            "Limón"
+        ],
+        "pasos": [
+            "Pasar la carne por harina y huevo para empanizarla y luego freírla en aceite caliente.",
+            "Cocinar el arroz y las papas fritas.",
+            "Cortar la cebolla, el tomate y el ají en cubitos para preparar el pico de gallo.",
+            "Servir la milanesa sobre una cama de arroz y papas fritas y agregar el pico de gallo por encima.",
+            "Agregar unas gotas de limón antes de servir."
+        ],
+        "porciones": 5,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 3,
+        "nombre": "Sopa de maní",
+        "imagen": "../../../../assets/imagenes recetas/sopademani.jpg",
+        "descripcion": "Un plato tradicional boliviano que consiste en una milanesa de carne de res servida sobre una cama de arroz y papas fritas.",
+        "tiempoPreparacion": 120,
+        "ingredientes": [
+            "1/2 taza de maní tostado y molido",
+            "1 cebolla picada",
+            "2 dientes de ajo picados",
+            "1 zanahoria rallada",
+            "1/2 taza de arroz",
+            "1 taza de leche",
+            "1 litro de caldo de pollo",
+            "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+            "En una olla, sofreír la cebolla y el ajo hasta que estén dorados.",
+            "Agregar la zanahoria y cocinar por 5 minutos.",
+            "Añadir el arroz y el maní molido, y mezclar bien.",
+            "Incorporar la leche y el caldo de pollo, y cocinar a fuego medio durante 1 hora.",
+            "Sazonar con sal y pimienta al gusto.",
+            "Servir caliente."
+        ],
+        "porciones": 4,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 4,
+        "nombre": "Pique Macho",
+        "imagen": "../../../../assets/imagenes recetas/pique-a-lo-macho-12.webp",
+        "descripcion": "El pique macho es un plato boliviano que consiste en carne de res en cubos con cebolla, tomate y chiles picantes, servido sobre una cama de papas fritas y coronado con huevos fritos. Es un plato muy popular en Bolivia y se puede encontrar en muchos restaurantes locales.",
+        "tiempoPreparacion": 60,
+        "ingredientes": [
+            "500 gramos de carne de res en cubos",
+            "2 cebollas cortadas en juliana",
+            "2 tomates cortados en cubos",
+            "2 papas cortadas en rodajas",
+            "2 chiles picantes",
+            "2 huevos fritos",
+            "Aceite",
+            "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+            "Freír la carne de res en aceite caliente hasta que esté dorada.",
+            "Agregar las cebollas y los tomates, y cocinar por 10 minutos.",
+            "Añadir los chiles picantes y sazonar con sal y pimienta al gusto.",
+            "Freír las papas en aceite caliente hasta que estén doradas y reservar.",
+            "En un plato, colocar las papas fritas y cubrir con la mezcla de carne, cebolla y tomate.",
+            "Colocar dos huevos fritos encima de la mezcla.",
+            "Servir caliente."
+        ],
+        "porciones": 4,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 5,
+        "nombre": "Fricasé de pollo",
+        "imagen": "../../../../assets/imagenes recetas/fricase-boliviano-500x407.jpg",
+        "descripcion": "Es un plato típico del altiplano boliviano, consiste en un caldo picante aderezado con cebolla y aji panca picante, con trozos de carne de cerdo, chuño negro y mote blanco. Se acompaña con Llajwa de Ají Verde.",
+        "tiempoPreparacion": 120,
+        "ingredientes": [
+            "1 pollo cortado en piezas",
+            "2 cebollas picadas",
+            "4 dientes de ajo picados",
+            "1 taza de arvejas",
+            "1 taza de zanahorias cortadas en cubos",
+            "1 taza de papas cortadas en cubos",
+            "1 taza de choclos",
+            "1 taza de chuño",
+            "1 taza de leche",
+            "2 tazas de caldo de pollo",
+            "Aceite",
+            "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+            "En una olla, sofreír la cebolla y el ajo hasta que estén dorados.",
+            "Agregar el pollo y cocinar hasta que esté dorado.",
+            "Incorporar las arvejas, las zanahorias, las papas y los choclos, y mezclar bien.",
+            "Agregar el caldo de pollo y cocinar a fuego medio durante 1 hora.",
+            "Añadir el chuño disuelto en leche, y mezclar bien.",
+            "Sazonar con sal y pimienta al gusto.",
+            "Servir caliente."
+        ],
+        "porciones": 4,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 6,
+        "nombre": "Chicharrón de cerdo",
+        "imagen": "../../../../assets/imagenes recetas/chicharron_cerdo_yo_chef.jpg",
+        "descripcion": "El chicharrón de cerdo es un plato tradicional boliviano que consiste en carne de cerdo cocida y luego frita hasta que esté dorada y crujiente. Es un plato muy sabroso y se sirve con mote y salsa criolla.",
+        "tiempoPreparacion": 120,
+        "ingredientes": [
+            "1 kg de carne de cerdo en trozos",
+            "1 cebolla picada",
+            "4 dientes de ajo picados",
+            "2 chiles picantes",
+            "Aceite",
+            "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+            "En una olla, hervir la carne de cerdo en agua con sal hasta que esté cocida.",
+            "Retirar la carne y cortar en trozos pequeños.",
+            "En una sartén, sofreír la cebolla y el ajo en aceite caliente hasta que estén dorados.",
+            "Agregar los chiles picantes y la carne de cerdo, y cocinar hasta que esté dorada y crujiente.",
+            "Sazonar con sal y pimienta al gusto.",
+            "Servir caliente con mote (maíz cocido) y salsa criolla (cebolla, tomate y cilantro picados)."
+        ],
+        "porciones": 4,
+        "tipoComida": "comida"
+    },
+    {
+        "id": 7,
+        "nombre": "Chairo",
+        "imagen": "../../../../assets/imagenes recetas/chairo-soup.jpg",
+        "descripcion": "El chicharrón de cerdo es un plato tradicional boliviano que consiste en carne de cerdo cocida y luego frita hasta que esté dorada y crujiente. Es un plato muy sabroso y se sirve con mote y salsa criolla.",
+        "tiempoPreparacion": 120,
+        "ingredientes": [
+            "1 kg de carne de cerdo en trozos",
+            "1 cebolla picada",
+            "4 dientes de ajo picados",
+            "2 chiles picantes",
+            "Aceite",
+            "Sal y pimienta al gusto"
+        ],
+        "pasos": [
+            "En una olla, hervir la carne de cerdo en agua con sal hasta que esté cocida.",
+            "Retirar la carne y cortar en trozos pequeños.",
+            "En una sartén, sofreír la cebolla y el ajo en aceite caliente hasta que estén dorados.",
+            "Agregar los chiles picantes y la carne de cerdo, y cocinar hasta que esté dorada y crujiente.",
+            "Sazonar con sal y pimienta al gusto.",
+            "Servir caliente con mote (maíz cocido) y salsa criolla (cebolla, tomate y cilantro picados)."
+        ],
+        "porciones": 4,
+        "tipoComida": "comida"
+    }
+]

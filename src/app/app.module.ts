@@ -9,6 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { IdPipe } from './pipes/id.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     FooterComponent,
     HeaderComponent,
     NavbarComponent,
+    IdPipe,
+   
     
   ],
   imports: [

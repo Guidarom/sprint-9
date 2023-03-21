@@ -1,0 +1,63 @@
+
+<div class="container mt-5" *ngIf="currentRecipe">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-start">
+          <div class="col-md-7  " style="height: auto;">
+            <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
+            <div class="button-container p-2">
+              <button class="btn btn-success me-3"
+                      (click)="saveFavorites()">Guardar</button>
+              <button class="btn btn-danger">Borrar</button>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h1 class="card-title fw-bold mb-3">{{ currentRecipe.nombre }}</h1>
+            <p class="card-text fs-5 mb-4">{{ currentRecipe.descripcion }}</p>
+            <div class="d-flex ">
+              <p class="card-text me-3"><i class="bi bi-person"></i>{{currentRecipe.porciones}}</p>
+              <p class="card-text"><i class="bi bi-clock"></i> {{currentRecipe.tiempoPreparacion}} min </p>
+            </div>
+            <h2 class="card-subtitle fw-bold mb-3">Ingredientes</h2>
+            <ul class="list-group mb-4">
+              <li class="list-group-item" *ngFor="let ingredient of currentRecipe.ingredientes">{{ ingredient }}</li>
+            </ul>
+            <h2 class="card-subtitle fw-bold mb-3">Pasos</h2>
+            <ol class="list-group">
+              <li class="list-group-item" *ngFor="let instruction of currentRecipe.pasos">{{ instruction }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+  
+
+    <!-- <div class="container mt-5" *ngIf="currentRecipe">
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
+          </div>
+          <div class="col-md-6">
+            <h1 class="fw-bold mb-3">{{ currentRecipe.nombre }}</h1>
+            <p class="fs-5 mb-4">{{ currentRecipe.descripcion }}</p>
+            <h2 class="fw-bold mb-3">Ingredientes</h2>
+            <ul class="list-group mb-4">
+              <li class="list-group-item" *ngFor="let ingredient of currentRecipe.ingredientes">{{ ingredient }}</li>
+            </ul>
+            <h2 class="fw-bold mb-3">Pasos</h2>
+            <ol class="list-group">
+              <li class="list-group-item" *ngFor="let instruction of currentRecipe.pasos">{{ instruction }}</li>
+            </ol>
+          </div>
+        </div>
+      </div> -->
+
+
+

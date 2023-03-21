@@ -4,12 +4,16 @@
 <div class="container menu">
     <div class="row top">
     <div class="navbar col-12 ">
-        <div class="logo pe-2"><h1>La caserita</h1></div>
+        <div class="logo pe-2">
+            <img class="img-logo"src="../../../assets/La_Caserita.svg" alt="">
+        </div>
         <ul class="links ">
+            
             <li><a [routerLink]="['']">Home</a></li>
-            <li><a href="favoritos">Favoritos</a></li>
+            <li><a [routerLink]="['recipes']">Recetas</a></li>
+            <li><a [routerLink]="['recipes']">Favoritos</a></li>
             <li><a [routerLink]="['products']">Productos típicos</a></li>
-            <li><a [routerLink]="['recypes']"><i class="bi bi-search"></i></a></li>
+            <li><a [routerLink]="['']"><i class="bi bi-search"></i></a></li>
         </ul>
         <a class="action_btn"
              *ngIf="!isLogged"
@@ -50,7 +54,7 @@
         <div class="col-12 ">
             <div  *ngIf="child" class="dropdown_menu " >
                 <li><a [routerLink]="['']" (click)="showPanel()" >Home</a></li>
-                <li><a href="suscrpcion">Suscripcion</a></li>
+                <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
                 <li><a href="favoritos">Favoritos</a></li>
                 <li><a [routerLink]="['products']" (click)="showPanel()">Productos típicos</a></li>
                 <li><a href="#" class="action_btn">Login</a></li>

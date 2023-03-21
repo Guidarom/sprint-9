@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { RecypesComponent } from './pages/recypes/recypes.component';
+import { RecipesComponent } from './pages/recipes/recipes.component';
+import { InfoRecipeComponent } from './components/info-recipe/info-recipe.component';
+import { FavoritesComponent } from '../components/favorites/favorites.component';
+
 
 
 
@@ -12,7 +15,10 @@ import { RecypesComponent } from './pages/recypes/recypes.component';
   declarations: [
     HomeComponent,
     ProductsComponent,
-    RecypesComponent
+    RecipesComponent,
+    InfoRecipeComponent,
+    FavoritesComponent
+    
   ],
   imports: [
     CommonModule,
