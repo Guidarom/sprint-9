@@ -8,4 +8,6 @@ export interface Recipe {
     pasos: string[]
     porciones: number
     tipoComida?: string
+    isFav?:boolean
+
 }

@@ -3,8 +3,6 @@ import { Observable} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 /* import  recipesJson from '../../assets/recipes.json' */
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +14,10 @@ export class RecipesService {
 
   public recipesList:any;
   public recipeCard:any;
-  //private recipesUrl = 'localhost:3000/api/recipes';
-  private recipesUrl =  `https://starpi.herokuapp.com/starpi/starships`
+  private recipesUrl = 'http://localhost:3000/recipes';
+  private jsonRecipes = 'assets/recipes.json'
+  //private recipesUrl =  `https://starpi.herokuapp.com/starpi/starships`
+  private urlApiNico= 'http://localhost:3000/api/recipes'
 
 
   getRecipes(){
@@ -33,7 +33,7 @@ export class RecipesService {
             fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-            this.recipesList = data;
+            this.recipesList = data
            console.log(this.recipesList)
           });
   }
@@ -46,7 +46,7 @@ export class RecipesService {
     
   }
   getRecipeCard(id:number){
-    this.recipesList= this.http.get('assets/recipes.json');
+    this.recipesList= this.http.get(this.urlApiNico);
     
     
 

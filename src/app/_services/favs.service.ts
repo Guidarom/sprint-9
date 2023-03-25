@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FavsService {
 
-  favsList:number[]=[];
+  favsList:number[]=[2,3];
   constructor() { }
 
   saveFavs(id:number){
@@ -16,7 +16,8 @@ export class FavsService {
     
   }
   removeFromFavs(id:number){
-    this.favsList.splice(id,1)
+    const index = this.favsList.findIndex(e=> id===e)
+    this.favsList.splice(index,1)
     console.log(this.favsList)
   }
 

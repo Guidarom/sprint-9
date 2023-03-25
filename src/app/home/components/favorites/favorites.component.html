@@ -4,7 +4,6 @@
           *ngIf="realFavList">
       <!-- Repeat this card block for each recipe in your JSON file -->
       <div class="col-12  col-lg-8 mb-4 card-recipe"
-            [routerLink]="['/info-recipe/' ,recipe.id]" 
             *ngFor=" let recipe of realFavList; let i=index" >
         <div class="card ">
           <div class="row no-gutters">
@@ -18,13 +17,28 @@
                   </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex">
               <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">
+              <div class="fav d-flex pt-0">
+                <i [ngClass]="{'bi-bookmark-fill pt-0': realFavList[i].isFav, 'bi-bookmark': !realFavList[i].isFav}" (click)="toggleIcon(i)"></i>
+              </div>
+              
+              
             </div>
+            
+              
+           
           </div>
         </div>
       </div>
       <!-- End of card block -->
+      <div class="col-8 p-3">
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" [style.width.%]="percentage" aria-valuemin="0" aria-valuemax="30"></div>
+        </div>
+      </div>
+      
+      
     </div>
   </div>
   
