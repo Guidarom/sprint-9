@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FavsService {
 
-  favsList:number[]=[2,3];
+  favsList:number[]=[2,];
   constructor() { }
 
   saveFavs(id:number){

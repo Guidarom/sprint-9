@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { AccountService } from '../../_services/account.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { AccountService } from '../../_services/account.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+
   child:boolean=false
   constructor(private accountService:AccountService){}
 

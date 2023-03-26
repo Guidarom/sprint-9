@@ -1,5 +1,5 @@
 
-<div class="container mt-5" *ngIf="currentRecipe">
+<div class="container mt-3" *ngIf="currentRecipe">
     <div class="card">
       <div class="card-body">
         <div class="row align-items-start">
@@ -8,6 +8,10 @@
             <div class="button-container p-2">
               <button class="btn btn-success me-3"
                       (click)="saveFavorites()">Guardar</button>
+              <button class="btn btn-white border-dark me-3"
+                      >Compartir <i class="bi bi-share"></i></button>
+              <button class="btn btn-white border-dark me-3"
+                      >Imprimir <i class="bi bi-printer"></i></button>
               <!-- <button class="btn btn-danger" (click)="removeFromFavs(currentRecipe.id)">Borrar</button> -->
             </div>
           </div>

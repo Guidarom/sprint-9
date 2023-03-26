@@ -10,7 +10,15 @@ h3{
 }
 .menu{
     max-width: 1500px;
-    height:fit-content
+    height:fit-content;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    
+   
 
 }
 
@@ -51,6 +59,8 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+   
 }
 
 .navbar .logo a{
