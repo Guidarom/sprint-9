@@ -15,6 +15,7 @@ export class InfoRecipeComponent implements OnInit{
 
   public currentRecipe: any
   private recipesList:any
+  public estadoRecipe!:string
 
   /*  */id: number= 0
 
@@ -29,14 +30,18 @@ export class InfoRecipeComponent implements OnInit{
   get favsList(){
     return this.favsService.favsList
   }
-  
-
-
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
       const param=params.get('id');
       this.id= Number(param)
       this.getRecipe();
+      const index = this.favsList.findIndex(e=> this.id===e)
+      if(index === -1){
+        this.estadoRecipe='Guardar'
+      }
+      else{
+        this.estadoRecipe='Guardado'
+      }
       
     })
   }
@@ -45,25 +50,31 @@ export class InfoRecipeComponent implements OnInit{
      .subscribe(data => {
       this.recipesList = data
       this.currentRecipe = this.recipesList.find((e:any)=>e.id===this.id)
-      console.log(this.currentRecipe)
+      
     }); 
   }
 
+
+changeState(){
+  console.log('changeState works')
+  const index = this.favsList.findIndex(e=> this.id===e)
+  if(index === -1){
+    this.saveFavorites()
+  }
+  else{
+    this.removeFromFavs(index)
+  }
+}
+
   saveFavorites(){
     this.favsService.saveFavs(this.id);
-    
+    this.estadoRecipe='Guardado'
   }
 
-  removeFromFavs(id:number){
-    const index = this.favsList.findIndex(e=> id===e)
-    console.log(index)
+  removeFromFavs(index:number){
+    //const index = this.favsList.findIndex(e=> id===e) 
     this.favsService.removeFromFavs(index);
+    this.estadoRecipe='Guardar'
   }
-
-
-
-
-
-
 
 }
