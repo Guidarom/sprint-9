@@ -7,11 +7,11 @@
             <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
             <div class="button-container p-2">
               <button class="btn btn-success me-3"
-                      (click)="saveFavorites()">Guardar</button>
+                      (click)="changeState()">{{estadoRecipe}}</button>
               <button class="btn btn-white border-dark me-3"
-                      >Compartir <i class="bi bi-share"></i></button>
+                      ><i class="bi bi-share"></i></button>
               <button class="btn btn-white border-dark me-3"
-                      >Imprimir <i class="bi bi-printer"></i></button>
+                      > <i class="bi bi-printer"></i></button>
               <!-- <button class="btn btn-danger" (click)="removeFromFavs(currentRecipe.id)">Borrar</button> -->
             </div>
           </div>

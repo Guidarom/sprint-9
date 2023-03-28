@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FavsService } from '../../../_services/favs.service';
 import { RecipesService } from '../../../_services/recipes.service';
 import { Recipe } from '../../../_models/recipe';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-favorites',
@@ -16,8 +17,9 @@ export class FavoritesComponent implements OnInit {
   set favList(value){
     this.favsService.favsList =value
   }
-  public realFavList:Recipe[]=[]
-  private recipesList:any
+  public currentFavList:Recipe[]=[]
+  public printFavList:Subject<Recipe[]> = new Subject()
+  private recipesList:Recipe[]=[]
   public isFill:boolean=true
   progress = this.favList.length;
   total = 30;
@@ -36,26 +38,31 @@ export class FavoritesComponent implements OnInit {
     this.recipesService.getRecipesList()
     .subscribe((data) => {
       this.recipesList=data
-      this.realFavList=this.recipesList.filter((data:any)=> this.favList.includes(data.id))
+      // this.realFavList = this.recipesList.filter((data:any)=> this.favList.includes(data.id))
+      this.printFavList.subscribe(array => {      
+        this.currentFavList = array})
+      this.printFavList.next(this.recipesList.filter(data=> this.favList.includes(data.id)))
       this.progress=this.favList.length
-      this.realFavList.forEach(e => e.isFav = true);
+      this.currentFavList.forEach(e => e.isFav = true);
+      // console.log(this.realFavList);
+      
        // Aquí puedes trabajar con los datos obtenidos
     }); 
   }
 
-  toggleIcon(i:number) {
-    if(this.realFavList[i].isFav){
-      this.favsService.removeFromFavs(this.realFavList[i].id)
+  changeFavs(i:number) {
+    if(this.currentFavList[i].isFav){
+      this.favsService.removeFromFavs(this.currentFavList[i].id)
       
     }
-    if(!this.realFavList[i].isFav){
-      this.favsService.saveFavs(this.realFavList[i].id)
+    if(!this.currentFavList[i].isFav){
+      this.favsService.saveFavs(this.currentFavList[i].id)
       
     }
-    this.progress=this.favList.length
+    this.progress = this.favList.length
     this.percentage = (this.progress / this.total) * 100;
 
-    this.realFavList[i].isFav = !this.realFavList[i].isFav
+    this.currentFavList[i].isFav = !this.currentFavList[i].isFav
   }
 }
 

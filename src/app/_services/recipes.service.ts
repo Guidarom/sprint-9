@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 /* import  recipesJson from '../../assets/recipes.json' */
+import { Recipe } from '../_models/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +41,7 @@ export class RecipesService {
 
   getRecipesList(){
    
-    return this.http.get('assets/recipes.json')
+    return this.http.get<Recipe[]>('assets/recipes.json')
     //this.recipesList = this.http.get('assets/recipes.json')
     //console.log(this.recipesList)
     

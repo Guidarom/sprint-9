@@ -37,19 +37,29 @@
 
         
     </div>
-<!--      <div  *ngIf="child" class="dropdown_menu " >
-        <li><a [routerLink]="['']">Home</a></li>
-        <li><a href="suscrpcion">Suscripcion</a></li>
-        <li><a href="favoritos">Favoritos</a></li>
-        <li><a href="productos">Productos típicos</a></li>
-        <li><a href="#" class="action_btn">Login</a></li>
-        
-    </div>  -->
+
+    <div class="container d-flex justify-content-end">
+        <div class="row ">
+            <div class="col-12 ">
+                <div  *ngIf="child" class="dropdown_menu " >
+                    <li><a [routerLink]="['']" (click)="showPanel()" >Home</a></li>
+                    <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
+                    <li><a [routerLink]="['favorites']" (click)="showPanel()">Favoritos</a></li>
+                    <li><a [routerLink]="['products']" (click)="showPanel()">Productos típicos</a></li>
+                    <li><a [routerLink]="['account/login']" class="action_btn" (click)="showPanel()">Login</a></li>
+                    
+                </div>
+            </div>
+    
+        </div>
+    
+    </div> 
+
 
     </div>
 </div>
 
-<div class="container d-flex justify-content-end">
+<!-- <div class="container d-flex justify-content-end">
     <div class="row ">
         <div class="col-12 ">
             <div  *ngIf="child" class="dropdown_menu " >
@@ -64,4 +74,4 @@
 
     </div>
 
-</div> 
+</div>  -->

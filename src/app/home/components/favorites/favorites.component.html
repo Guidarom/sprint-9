@@ -1,10 +1,10 @@
 
 <div class="container">
     <div class="row justify-content-center"
-          *ngIf="realFavList">
+          *ngIf="currentFavList">
       <!-- Repeat this card block for each recipe in your JSON file -->
       <div class="col-12  col-lg-8 mb-4 card-recipe"
-            *ngFor=" let recipe of realFavList; let i=index" >
+            *ngFor=" let recipe of currentFavList; let i=index" >
         <div class="card ">
           <div class="row no-gutters">
             <div class="col-8">
@@ -20,14 +20,13 @@
             <div class="col-4 d-flex">
               <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">
               <div class="fav d-flex pt-0">
-                <i [ngClass]="{'bi-bookmark-fill pt-0': realFavList[i].isFav, 'bi-bookmark': !realFavList[i].isFav}" (click)="toggleIcon(i)"></i>
+                <i [ngClass]="{'bi-bookmark-fill pt-0': currentFavList[i].isFav, 'bi-bookmark': !currentFavList[i].isFav}" (click)="changeFavs(i)"></i>
               </div>
               
               
             </div>
             
               
-           
           </div>
         </div>
       </div>
