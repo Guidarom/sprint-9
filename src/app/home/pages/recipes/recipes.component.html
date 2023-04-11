@@ -18,7 +18,10 @@
               </div>
             </div>
             <div class="col-4">
-              <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">
+              <div class="recipe-image" [ngStyle]="{'background-image': 'url(' + recipe.imagen + ')'}"></div>
+              <!-- <div class="recipe-image" [style.background-image]="'url(' + recipe.imagen + ')'" ></div> -->
+
+              <!--  <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">  -->
             </div>
           </div>
         </div>

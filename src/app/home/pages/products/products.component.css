@@ -1,6 +1,20 @@
-img{
+/* img{
     height: 300px;
     justify-content: center;
+} */
+.items-img{
+     
+        /* background-image: url("../../../../assets/productos-tipicos/chuno-andino_jpg.webp"); */
+
+        background-repeat: no-repeat;
+        height: 250px;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 auto;
+        padding: 1%;
+    
 }
 .img-top{
     max-width: 500px;
@@ -11,10 +25,17 @@ img{
     
 }
 .img-card{
-    height: 200px;
-    display: block;
+    
+    height: auto;
+    display:block;
     margin: 0 auto;
     width: 100%;
 }
+button{
+    position: relative;
+    top:-1.5rem;
+    
+}
+
 
 

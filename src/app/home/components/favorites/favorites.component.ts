@@ -36,11 +36,15 @@ export class FavoritesComponent implements OnInit {
   }
   getRecipesList(){
     this.recipesService.getRecipesList()
+    
     .subscribe((data) => {
       this.recipesList=data
+      console.log(data)
+     
       // this.realFavList = this.recipesList.filter((data:any)=> this.favList.includes(data.id))
       this.printFavList.subscribe(array => {      
-        this.currentFavList = array})
+        this.currentFavList = array
+      console.log(array)})
       this.printFavList.next(this.recipesList.filter(data=> this.favList.includes(data.id)))
       this.progress=this.favList.length
       this.currentFavList.forEach(e => e.isFav = true);
@@ -48,7 +52,10 @@ export class FavoritesComponent implements OnInit {
       
        // Aquí puedes trabajar con los datos obtenidos
     }); 
+
   }
+
+  
 
   changeFavs(i:number) {
     if(this.currentFavList[i].isFav){
