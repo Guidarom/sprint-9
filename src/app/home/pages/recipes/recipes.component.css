@@ -25,10 +25,10 @@ p{
         font-size:medium;
     }
 }
-/* .card-recipe{
-    height: 100px !important;
+ .card-recipe{
+    cursor: pointer;
 
-} */
+} 
 /* .list-recipes{
     max-width: 700px !important;
 } */

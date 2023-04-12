@@ -3,8 +3,11 @@
     <div class="card">
       <div class="card-body">
         <div class="row align-items-start">
-          <div class="col-md-7  " style="height: auto;">
-            <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
+          <div class="col-md-7  " style="height: auto">
+            <div style="position:relative">
+              <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
+              <i class="bi bi-heart heart-icon" style="top: 5px; left: 17px; " ></i>
+            </div>
             <div class="button-container p-2">
               <button class="btn btn-success me-3"
                       (click)="changeState()">{{estadoRecipe}}</button>

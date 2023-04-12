@@ -5,7 +5,7 @@
       <div class="col-12  col-lg-8 mb-4 card-recipe"
             [routerLink]="['/info-recipe/' ,recipe.id]" 
             *ngFor=" let recipe of recipesList; let i=index" >
-        <div class="card ">
+        <div class="card shadow border-bottom-0 border-white">
           <div class="row no-gutters">
             <div class="col-8">
               <div class="card-body p-2">
@@ -17,8 +17,8 @@
                   </div>
               </div>
             </div>
-            <div class="col-4">
-              <div class="recipe-image" [ngStyle]="{'background-image': 'url(' + recipe.imagen + ')'}"></div>
+            <div class="col-4 m-0 p-0">
+              <div class="recipe-image rounded-end " [ngStyle]="{'background-image': 'url(' + recipe.imagen + ')'}"></div>
               <!-- <div class="recipe-image" [style.background-image]="'url(' + recipe.imagen + ')'" ></div> -->
 
               <!--  <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">  -->

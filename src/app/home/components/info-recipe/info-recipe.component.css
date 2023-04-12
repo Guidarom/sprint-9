@@ -33,6 +33,7 @@
      .img-fluid {
     max-width: 100%;
     height: auto;
+    position: relative;
     }  
    
     
@@ -45,6 +46,24 @@
     
     .col-md-6 {
     width: 50%;
+    }
+
+    .heart-icon{
+        position: absolute;
+        font-size: 3rem;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+
+
+    @keyframes heart-animation {
+        0% {
+            color: inherit;
+        }
+        100% {
+            color: red;
+        }
     }
     
     @media (max-width: 768px) {
@@ -74,4 +93,5 @@
     .list-group-item {
     font-size: 1rem;
     }
+
     }
