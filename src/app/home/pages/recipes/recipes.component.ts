@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipesComponent implements OnInit{
 
+  public loading:boolean =false;
 
   constructor(private recipesService:RecipesService, private http:HttpClient){}
 
@@ -44,6 +45,9 @@ export class RecipesComponent implements OnInit{
     this.recipesService.getRecipesList()
     .subscribe(data => {
       this.recipesList=data
+      if(data){
+        this.loading=true
+      }
        // Aquí puedes trabajar con los datos obtenidos
     }); 
     

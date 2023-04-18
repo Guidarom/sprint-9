@@ -10,7 +10,6 @@ import { Recipe } from '../_models/recipe';
 export class RecipesService {
 
   constructor ( private http:HttpClient) { 
-
   }
 
   public recipesList:any;
@@ -35,12 +34,11 @@ export class RecipesService {
             .then((response) => response.json())
             .then((data) => {
             this.recipesList = data
-           console.log(this.recipesList)
+            console.log(this.recipesList)
           });
   }
 
   getRecipesList(){
-   
     return this.http.get<Recipe[]>('assets/recipes.json')
     //this.recipesList = this.http.get('assets/recipes.json')
     //console.log(this.recipesList)
@@ -48,13 +46,6 @@ export class RecipesService {
   }
   getRecipeCard(id:number){
     this.recipesList= this.http.get(this.urlApiNico);
-    
-    
-
-  
-    
-   
-
 }
 
 

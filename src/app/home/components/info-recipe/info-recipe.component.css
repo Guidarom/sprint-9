@@ -50,21 +50,67 @@
 
     .heart-icon{
         position: absolute;
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: whitesmoke;
         cursor: pointer;
     }
+    .heart-icon.clicked {
+        animation: fillHeart 0.5s forwards;
+        color: red;
+    }
+    .heart-container {
+       
+            position: absolute;
+            top: 5px;
+            left: 17px;
+          
+      }
+      .confetti {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        width: 2px;
+        height: 2px;
+        background-color: var(--confetti-color, red);
+        border-radius: 20%;
+        animation: confetti 0.5s linear ;
+        transform-origin: center;
+      }
+    
 
 
-
-    @keyframes heart-animation {
+    @keyframes fillHeart {
         0% {
-            color: inherit;
+          color: red;
+          transform: scale(0.2);
+        }
+        50% {
+          color: red;
+          transform: scale(1.1);
         }
         100% {
-            color: red;
+          color: red;
+          transform: scale(1);
         }
-    }
+      }
+      @keyframes confetti {
+        0% {
+          transform: rotate(calc(360deg * var(--i, 0) / 8)) translateY(-5px) rotate(calc(-360deg * var(--i, 0) / 8));
+          background-color: var(--confetti-color,yellow);
+        }
+        100% {
+          transform: rotate(calc(360deg * var(--i, 0) / 8)) translateY(-20px) rotate(calc(-360deg * var(--i, 0) / 8));
+          background-color: var(--confetti-color,red);
+          
+        }
+      }
+      
+      
+      
+      
+      
+      
+      
     
     @media (max-width: 768px) {
     .row {

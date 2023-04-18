@@ -9,5 +9,6 @@ export interface Recipe {
     porciones: number
     tipoComida?: string
     isFav?:boolean
+    likes?:number
 
 }

@@ -1,5 +1,17 @@
 
 <div class="container">
+
+  <!-- Aqui va el loading -->
+  <div class="text-center text-black p-5 m-5" *ngIf="!loading;else divRecipes">
+    
+      <span class="spinner-border spinner-border-sm spinner-border custom-spinner" role="status" aria-hidden="true"></span>
+      
+    
+
+  </div>
+
+  <ng-template #divRecipes>
+
     <div class="row justify-content-center">
       <!-- Repeat this card block for each recipe in your JSON file -->
       <div class="col-12  col-lg-8 mb-4 card-recipe"
@@ -28,6 +40,13 @@
       </div>
       <!-- End of card block -->
     </div>
+
+  </ng-template>
+
+
+    
+
+
   </div>
   
 

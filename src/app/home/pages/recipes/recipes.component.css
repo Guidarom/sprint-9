@@ -20,6 +20,11 @@ p{
     margin: 0 auto;
     padding: 1;
 }
+
+.custom-spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 @media (min-width: 770px) {
     p{
         font-size:medium;

@@ -16,6 +16,8 @@ export class InfoRecipeComponent implements OnInit{
   public currentRecipe: any
   private recipesList:any
   public estadoRecipe!:string
+  public heartClicked = false;
+  public likesRecipe:number = 0;
 
   /*  */id: number= 0
 
@@ -50,6 +52,7 @@ export class InfoRecipeComponent implements OnInit{
      .subscribe(data => {
       this.recipesList = data
       this.currentRecipe = this.recipesList.find((e:any)=>e.id===this.id)
+      this.currentRecipe.likes= this.likesRecipe
       
     }); 
   }
@@ -75,6 +78,20 @@ changeState(){
     //const index = this.favsList.findIndex(e=> id===e) 
     this.favsService.removeFromFavs(index);
     this.estadoRecipe='Guardar'
+  }
+
+  onHeartClick(){
+    console.log('works')
+    this.heartClicked = !this.heartClicked;
+    if(this.heartClicked){
+      this.currentRecipe.likes += 1
+
+    }
+    if(!this.heartClicked){
+      this.currentRecipe.likes -=1
+    }
+    console.log(this.currentRecipe.likes)
+    
   }
 
 }
