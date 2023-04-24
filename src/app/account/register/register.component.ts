@@ -46,17 +46,37 @@ export class RegisterComponent {
   send(){
     console.log('send works')
       const newUser: User={
-        id: this.usersList.length +1,
+        //id: this.usersList.length +1,
         nombre: this.signupForm.value.nombre,
         email:this.signupForm.value.email,
         password:this.signupForm.value.password
       }
 
       if(this.signupForm.valid){
-        this.usersList.push(newUser),
+        console.log(newUser)
+        this.accountService.register(newUser).subscribe({
+          
+          next: (response) => {
+            console.log('Usuario agregado:', response);
+          },
+          error: (error) => {
+            console.error('Error al agregar usuario:', error);
+          },
+
+      });
+
+        console.log('register works')
+
+        
+
+
+      // Esiguiente codigo funciona con local storage
+       /*  this.usersList.push(newUser),
         this.accountService.logginTrue(),
         this.accountService.saveToLocalStorage(this.usersList),  
-        this.router.navigateByUrl(this.redirectUrl)
+        this.router.navigateByUrl(this.redirectUrl) */
+
+
         
       }
       

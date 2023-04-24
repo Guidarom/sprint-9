@@ -19,6 +19,7 @@ export class AccountService {
   
   usersList:User[]=[]
   redirectUrl:any =''
+  private apiUserUrl='http://localhost:8000'
   private usersUrl= 'http://localhost:8000/api/usuarios?desde=0'
 
   loginOut(){
@@ -40,6 +41,10 @@ export class AccountService {
     }
     this.usersList=JSON.parse(localStorage.getItem(key)!)
   }
+
+   register(user: User) {
+        return this.http.post(`${this.apiUserUrl}/api/usuarios`, user);
+    }
 
   getAll(): Observable <User[]> {
     return this.http.get<any>(this.usersUrl).pipe(
