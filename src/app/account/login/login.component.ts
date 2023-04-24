@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
 
     if(this.signInForm.valid){
       const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
-      foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.name}`),
+      foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.nombre}`),
       (this.router.navigateByUrl(this.redirectUrl)),
       (this.accountService.logginTrue()))      
       : alert('try it again!')

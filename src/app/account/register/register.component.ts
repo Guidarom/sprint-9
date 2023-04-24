@@ -22,7 +22,7 @@ export class RegisterComponent {
     private activateRoute:ActivatedRoute
   ){
     this.signupForm=this.builder.group({
-      name:[''],
+      nombre:[''],
       email:['',Validators.compose([Validators.email,Validators.required])],
       password:['',Validators.compose([Validators.minLength(6),Validators.required],)]
     })
@@ -47,7 +47,7 @@ export class RegisterComponent {
     console.log('send works')
       const newUser: User={
         id: this.usersList.length +1,
-        name: this.signupForm.value.name,
+        nombre: this.signupForm.value.nombre,
         email:this.signupForm.value.email,
         password:this.signupForm.value.password
       }

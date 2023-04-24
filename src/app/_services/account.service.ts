@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
 import { User } from '../_models/user';
 
+/* import { environment } from 'src/environments/environment'; */
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  constructor() { }
+
+  constructor(
+    private router: Router, 
+    private http  : HttpClient ) { }
+
   isLogged:boolean=false
   
   usersList:User[]=[]
   redirectUrl:any =''
+  private usersUrl= 'http://localhost:8000/api/usuarios?desde=0'
 
   loginOut(){
     this.isLogged=false
@@ -30,6 +40,12 @@ export class AccountService {
     }
     this.usersList=JSON.parse(localStorage.getItem(key)!)
   }
+
+  getAll(): Observable <User[]> {
+    return this.http.get<any>(this.usersUrl).pipe(
+      map(response => response.usuarios)
+    );
+  } 
 
 }
 

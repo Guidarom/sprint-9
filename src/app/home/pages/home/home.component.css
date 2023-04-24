@@ -9,6 +9,11 @@
     height: 400px;
 } */
 
+.btn {
+    width: 200px;
+    margin-top: 1rem;
+  }
+
 .img-home{
      max-width: 550px; 
     height: auto;
