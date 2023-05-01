@@ -16,7 +16,7 @@ interface usersData {
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit{
-  users?: User[];
+  users?: any[];
   
   constructor(private accountService:AccountService){}
 
@@ -28,9 +28,13 @@ export class ListComponent implements OnInit{
     
   }
 
-  deleteUser(){
+  deleteUser(id:number){
    
-    console.log(this.users)
+    console.log(id)
+    const user = this.users!.find(x => x.id === id);
+        this.accountService.delete(id)
+            .pipe(first())
+            .subscribe(() => this.users = this.users!.filter(x => x.id !== id));
   }
 
 }

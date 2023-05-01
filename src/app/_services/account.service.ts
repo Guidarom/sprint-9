@@ -4,7 +4,7 @@ import { User } from '../_models/user';
 /* import { environment } from 'src/environments/environment'; */
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,14 @@ export class AccountService {
 
   constructor(
     private router: Router, 
-    private http  : HttpClient ) { }
+    private http  : HttpClient ) {  
+      this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+      this.user = this.userSubject.asObservable(); }
 
   isLogged:boolean=false
+
+  private userSubject: BehaviorSubject<User | null>;
+  public user: Observable<User | null>;
   
   usersList:User[]=[]
   redirectUrl:any =''
@@ -42,8 +47,30 @@ export class AccountService {
     this.usersList=JSON.parse(localStorage.getItem(key)!)
   }
 
-   register(user: User) {
+    register(user: User) {
         return this.http.post(`${this.apiUserUrl}/api/usuarios`, user);
+    }
+
+    login(email: string, password: string) {
+      return this.http.post<User>(`${this.apiUserUrl}/api/auth/login`, { email, password })
+          .pipe(map(user => {
+              // store user details and jwt token in local storage to keep user logged in between page refreshes
+              localStorage.setItem('user', JSON.stringify(user));
+              this.userSubject.next(user);
+              console.log('usuario logeado')
+              return user;
+          }));
+  }
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
+    this.router.navigate(['/login']);
+}
+
+    delete(id: number) {
+      return this.http.delete(`${this.apiUserUrl}/api/usuarios/${id}`)
     }
 
   getAll(): Observable <User[]> {

@@ -17,6 +17,7 @@ export class FavoritesComponent implements OnInit {
   set favList(value){
     this.favsService.favsList =value
   }
+  public loading:boolean = false
   public currentFavList:Recipe[]=[]
   public printFavList:Subject<Recipe[]> = new Subject()
   private recipesList:Recipe[]=[]
@@ -48,6 +49,7 @@ export class FavoritesComponent implements OnInit {
       this.printFavList.next(this.recipesList.filter(data=> this.favList.includes(data.id)))
       this.progress=this.favList.length
       this.currentFavList.forEach(e => e.isFav = true);
+      this.loading = true
       // console.log(this.realFavList);
       
        // Aquí puedes trabajar con los datos obtenidos

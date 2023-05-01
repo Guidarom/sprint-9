@@ -3,6 +3,7 @@ import { User } from '../../_models/user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../_services/account.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { AccountService } from '../../_services/account.service';
 export class LoginComponent implements OnInit {
 
   signInForm:FormGroup;
+  error = '';
  // private redirectUrl:any ='';
 
   get redirectUrl(){
@@ -60,17 +62,39 @@ export class LoginComponent implements OnInit {
       email:this.signInForm.value.email,
       password:this.signInForm.value.password
     }
+
+    const currentEmail = this.signInForm.value.email
+    const currentPassword = this.signInForm.value.password
+
     
 
     if(this.signInForm.valid){
-      const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
+      this.accountService.login(currentEmail,currentPassword)
+      .pipe(first())
+      .subscribe({
+          next: () => {
+              // get return url from route parameters or default to '/'
+              const returnUrl = this.activatedRoute.snapshot.queryParams[''] || '/';
+              this.router.navigate(['']); 
+          },
+          error: error => {
+              this.error = error;
+              this.accountService.logginTrue()
+          }
+      });
+
+
+      /* const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
       foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.nombre}`),
       (this.router.navigateByUrl(this.redirectUrl)),
       (this.accountService.logginTrue()))      
-      : alert('try it again!')
+      : alert('try it again!') */
     }
     this.signInForm.markAllAsTouched()  
   }
+
+
+
 
 
 

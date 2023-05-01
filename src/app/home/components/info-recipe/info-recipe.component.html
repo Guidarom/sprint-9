@@ -1,11 +1,12 @@
 
 <div class="container mt-3" *ngIf="currentRecipe">
-    <div class="card">
-      <div class="card-body">
+    <div class="card no-padding ">
+      <div class="card-body pt-0 ps-3 ">
         <div class="row align-items-start">
-          <div class="col-md-7  " style="height: auto">
+          <div class="col-md-7  p-0" style="height: auto">
             <div style="position:relative">
-              <img class="img-fluid" [src]="currentRecipe.imagen" alt="Recipe Image" />
+              <div class="image-container rounded-top">
+              <img class="img-fluid no-margin " [src]="currentRecipe.imagen" alt="Recipe Image" />
               
               <div class="heart-container">
               
@@ -19,9 +20,11 @@
 
               </div>
             </div>
+            </div>
             <div class="d-flex justify-content-between align-items-center">
               <div class="button-container p-2">
                 <button class="btn btn-success me-3"
+                style="width: 100px;"
                         (click)="changeState()">{{estadoRecipe}}</button>
                 <button class="btn btn-white border-dark me-3"
                         ><i class="bi bi-share"></i></button>
@@ -30,7 +33,8 @@
                 <!-- <button class="btn btn-danger" (click)="removeFromFavs(currentRecipe.id)">Borrar</button> -->
               </div>
   
-              <div>
+              <div class="pe-5">
+                
                 <p>{{this.currentRecipe.likes}} <strong>hearts</strong></p>
               </div>
 
@@ -39,7 +43,7 @@
             
           </div>
           <div class="col-md-5">
-            <h1 class="card-title fw-bold mb-3">{{ currentRecipe.nombre }}</h1>
+            <h1 class="card-title fw-bold mb-3 pt-2">{{ currentRecipe.nombre }}</h1>
             <p class="card-text fs-5 mb-4">{{ currentRecipe.descripcion }}</p>
             <div class="d-flex ">
               <p class="card-text me-3"><i class="bi bi-person"></i>{{currentRecipe.porciones}}</p>

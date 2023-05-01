@@ -2,9 +2,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     
-    .card-body {
+   /*  .card-body {
     padding: 2rem;
-    }
+    } */
     
     h1.card-title {
     font-size: 2rem;
@@ -13,7 +13,7 @@
     
     h2.card-subtitle {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    
     margin-bottom: 1rem;
     }
     
@@ -31,10 +31,21 @@
     }
     
      .img-fluid {
-    max-width: 100%;
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    /* max-width: 100%;
     height: auto;
-    position: relative;
+    position: relative; */
     }  
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px; /* Ajusta este valor según sea necesario */
+      overflow: hidden;
+    }
    
     
     .row {
@@ -61,9 +72,18 @@
     .heart-container {
        
             position: absolute;
-            top: 5px;
-            left: 17px;
+            bottom: 40px;
+            right: 40px;
           
+      }
+      .no-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .no-margin {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
       }
       .confetti {
         position: absolute;
@@ -76,6 +96,9 @@
         animation: confetti 0.5s linear ;
         transform-origin: center;
       }
+      .ps-3 {
+        padding-left: 11px!important;
+    }
     
 
 
@@ -123,11 +146,13 @@
     
     h1.card-title {
     font-size: 1.5rem;
+
     margin-bottom: 0.5rem;
     }
     
     h2.card-subtitle {
     font-size: 1.2rem;
+    
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     }

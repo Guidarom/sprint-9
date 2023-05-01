@@ -73,6 +73,14 @@ a{
     /*  padding-right: 10rem;  */
     gap: 4rem; 
 }
+.bi-person {
+    font-size: 23px;
+    
+}
+.person:hover .bi-person {
+    color:#28a745;
+ }
+
 
 
 .navbar .toggle_btn{
@@ -135,7 +143,7 @@ a{
 @media(max-width:950px){
 
     .navbar .links,
-    .navbar .action_btn{
+    .navbar .action_btn,.person{
         display: none;
     } 
     /* .navbar .links {

@@ -15,13 +15,24 @@
             <li><a [routerLink]="['products']">Productos típicos</a></li>
             <li><a [routerLink]="['']"><i class="bi bi-search"></i></a></li>
         </ul>
-        <a class="action_btn"
-             *ngIf="!isLogged"
-            [routerLink]="['account/login']">Login</a>
-            <a  *ngIf="isLogged" class='action_btn  m-1 '
-          (click)="loginOut()" [routerLink]="['']">
-          Log out
-          </a>
+        
+            
+                <a class=" person"
+                   *ngIf="!isLogged"
+                   [routerLink]="['account/login']"><i class="bi bi-person"></i> Acceder</a>
+            
+            <!-- <li>
+                <a  *ngIf="isLogged" 
+                    class='action_btn  m-1 '
+                    (click)="loginOut()" 
+                    [routerLink]="['']">
+                Log out
+                </a>
+            </li> -->
+
+        
+        
+           
 
           <!-- poner el registro como un llamado en suscripcion -->
         <!--   <a  *ngIf="!isLogged" class='action_btn  '
