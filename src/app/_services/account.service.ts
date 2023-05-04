@@ -3,7 +3,7 @@ import { User } from '../_models/user';
 
 /* import { environment } from 'src/environments/environment'; */
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
@@ -18,6 +18,7 @@ export class AccountService {
       this.user = this.userSubject.asObservable(); }
 
   isLogged:boolean=false
+  adminSession: boolean = false;
 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
@@ -56,6 +57,7 @@ export class AccountService {
           .pipe(map(user => {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('user', JSON.stringify(user));
+              localStorage.setItem('token', user.token!);
               this.userSubject.next(user);
               console.log('usuario logeado')
               return user;
@@ -65,12 +67,17 @@ export class AccountService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    this.adminSession = false;
     this.userSubject.next(null);
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
+    console.log('user deleted')
 }
 
     delete(id: number) {
-      return this.http.delete(`${this.apiUserUrl}/api/usuarios/${id}`)
+      const headers = new HttpHeaders()
+      .set('x-token', localStorage.getItem('token') || '' )
+      return this.http.delete(`${this.apiUserUrl}/api/usuarios/${id}`,{ headers })
     }
 
   getAll(): Observable <User[]> {

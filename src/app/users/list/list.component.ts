@@ -37,4 +37,8 @@ export class ListComponent implements OnInit{
             .subscribe(() => this.users = this.users!.filter(x => x.id !== id));
   }
 
+  logout(){
+    this.accountService.logout()
+  }
+
 }

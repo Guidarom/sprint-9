@@ -18,7 +18,7 @@
             
             <td style="white-space: nowrap">
 
-                <a routerLink="" class="btn btn-sm btn-primary me-1">Edit</a>
+                <a routerLink="" (click)="logout()" class="btn btn-sm btn-primary me-1">Edit</a>
                 <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user">
                     
                    <!--  <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>-->
