@@ -1,6 +1,8 @@
-.footer {
-    background-color: #f8f9fa;
-    padding: 40px 0;
+
+.custom-footer{
+    background-color: #C7E9B0 !important;
+    max-width: 1400px;
+    
   }
   
   .social-icons {

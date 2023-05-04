@@ -1,15 +1,16 @@
-<div class="container ">
-    <div class="row align-content-star justify-content-end py-5 bg-food ">
+<div class="container bg-food bg ">
+    <div class="row align-content-star justify-content-center py-5 ">
         <div class="col-11  py-4 " style="max-width: 450px;">
-            <div class="card  text-white bg-success h-100">
+            <div class="card  h-100" style="background-color: #DDFFBB;">
                 <div class=" text-center row">
                     <div class="col-9 col-sm-10">
                         <h3>Crea tu cuenta</h3>
                     </div>
                     <div class="col-3 col-sm-2">
-                        <a  class=' btn border-white text-end text-white m-1 '
+                        <a  class=' text-black  m-1 '
+                        style="font-size: 1.5rem;"
                             [routerLink]="['']">
-                        X
+                            <i class="bi bi-x-lg"></i>
                         </a>
                     </div>  
                 </div>
@@ -43,7 +44,7 @@
                                           *ngIf="required('password')">Please enter a correct password</span>
                         </div>
                         <div class="text-center col-12">
-                            <button  type="submit" class="btn btn-warning btn-block" >Create Account</button>
+                            <button  type="submit" class="btn btn-success btn-block" >Create Account</button>
                         </div>
                     </form>
                 </div>

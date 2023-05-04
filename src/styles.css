@@ -1,6 +1,11 @@
 
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
+body,
+html {
+  height: 100%;
+}
+
 
 .bg-food{
     
@@ -12,6 +17,7 @@
     z-index: -1;
     background-image: url('./assets/kisspng-fruit-vegetable-cartoon-clip-art-vector-vegetables-5a994c10c528f0.3556398715199959208076.png');
     background-size: 200px;
+    
     animation: animateBackground 30s linear infinite;
   }
   
