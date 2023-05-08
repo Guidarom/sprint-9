@@ -21,18 +21,14 @@
                    *ngIf="!isLogged"
                    [routerLink]="['account/login']"><i class="bi bi-person"></i> Acceder</a>
             
-            <!-- <li>
+            
                 <a  *ngIf="isLogged" 
-                    class='action_btn  m-1 '
+                    class=' m-1 exit'
                     (click)="loginOut()" 
-                    [routerLink]="['']">
-                Log out
+                    [routerLink]="['account/login']">
+                Salir <i class="bi bi-box-arrow-right"></i>
                 </a>
-            </li> -->
-
-        
-        
-           
+            
 
           <!-- poner el registro como un llamado en suscripcion -->
         <!--   <a  *ngIf="!isLogged" class='action_btn  '
@@ -57,7 +53,14 @@
                     <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
                     <li><a [routerLink]="['favorites']" (click)="showPanel()">Favoritos</a></li>
                     <li><a [routerLink]="['products']" (click)="showPanel()">Productos típicos</a></li>
-                    <li><a [routerLink]="['account/login']" class="action_btn" (click)="showPanel()">Login</a></li>
+                    <li *ngIf="!isLogged"><a [routerLink]="['account/login']" class="action_btn" (click)="showPanel()" >Login</a></li>
+                    <li>
+                        <a  *ngIf="isLogged" 
+                    (click)="loginOut()"
+                    [routerLink]="['account/login']">
+                Salir <i class="bi bi-box-arrow-right"></i>
+                </a>
+                    </li>
                     
                 </div>
             </div>

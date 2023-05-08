@@ -18,8 +18,9 @@ export class NavbarComponent {
   }
 
   loginOut(){
-    console.log('logingout works')
-   // return this.userService.loginOut()
+    console.log('logingout works');
+    this.accountService.loginOut();
+    this.showPanel()
   }
 
   showPanel(){

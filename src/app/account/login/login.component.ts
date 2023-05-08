@@ -75,11 +75,12 @@ export class LoginComponent implements OnInit {
           next: () => {
               // get return url from route parameters or default to '/'
               const returnUrl = this.activatedRoute.snapshot.queryParams[''] || '/';
-              this.router.navigate(['']); 
+              this.router.navigate(['recipes']);
+              this.accountService.logginTrue() 
           },
           error: error => {
               this.error = error;
-              this.accountService.logginTrue()
+              
           }
       });
 
