@@ -2,8 +2,8 @@
 
 
 <div class="container menu">
-    <div class="row top shadow">
-    <div class="navbar col-12 ">
+    <div class="row top shadow p-0 m-0">
+    <div class="navbar  col-12 px-3 ">
         <div class="logo pe-2">
             <img class="img-logo"src="../../../assets/La_Caserita.svg" alt="">
         </div>
@@ -26,7 +26,7 @@
                     class=' m-1 exit'
                     (click)="loginOut()" 
                     [routerLink]="['account/login']">
-                Salir <i class="bi bi-box-arrow-right"></i>
+                Cerrar sesión <i class="bi bi-box-arrow-right"></i>
                 </a>
             
 
@@ -37,7 +37,9 @@
           </a> -->
 
         <div class="toggle_btn " (click)="showPanel()">
-            <span class="navbar-toggler-icon "></span>
+            <i class="bi" [ngClass]="child ? 'bi-x-lg' : 'bi-list'"></i>
+
+            
         </div>
 
 
@@ -45,7 +47,7 @@
         
     </div>
 
-    <div class="container d-flex justify-content-end">
+    <div class="container border rounded d-flex justify-content-end p-0 m-0" style="background-color: #E9EFC0;">
         <div class="row ">
             <div class="col-12 ">
                 <div  *ngIf="child" class="dropdown_menu " >
@@ -67,16 +69,16 @@
     
         </div>
     
-    </div> 
+    </div>  
 
 
     </div>
 </div>
 
-<!-- <div class="container d-flex justify-content-end">
-    <div class="row ">
-        <div class="col-12 ">
-            <div  *ngIf="child" class="dropdown_menu " >
+<!--  <div class="container d-flex justify-content-end pt-5">
+    <div class="row pt-5">
+        <div class="col-12 pt-1">
+            <div  *ngIf="child" class="dropdown_menu" >
                 <li><a [routerLink]="['']" (click)="showPanel()" >Home</a></li>
                 <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
                 <li><a [routerLink]="['favorites']" (click)="showPanel()">Favoritos</a></li>
@@ -88,4 +90,4 @@
 
     </div>
 
-</div>  -->
+</div>  --> 

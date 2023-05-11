@@ -15,7 +15,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('./assets/kisspng-fruit-vegetable-cartoon-clip-art-vector-vegetables-5a994c10c528f0.3556398715199959208076.png');
+    background-image: url('./assets/bg-v.1.1.6.png');
     background-size: 200px;
     
     animation: animateBackground 30s linear infinite;

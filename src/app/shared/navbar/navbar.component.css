@@ -31,6 +31,9 @@ li:hover{
     text-decoration-thickness: 2px;
     text-underline-offset: 5px;
 }
+.exit:hover{
+    color: #28a745;
+}
 a{
     text-decoration: none;
     color: black;
@@ -84,8 +87,8 @@ a{
 
 
 .navbar .toggle_btn{
-    color: #fff;
-    font-size: 1.5rem;
+    color:black;
+    font-size: 2rem;
     cursor: pointer;
     display: none;
 }
@@ -119,10 +122,12 @@ a{
     width: 250px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px); 
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+
 /* .dropdown_menu.open{
     height: 240px;
 
@@ -139,6 +144,13 @@ a{
     display: flex;
     justify-content: center;
 }
+.navbar-toggler-icon {
+    color: blue;
+    fill: blue;
+    /* Si es un SVG o un icono de una fuente como FontAwesome puedes usar 'fill': */
+    /* fill: black; */
+}
+
 /* responsive design */
 @media(max-width:950px){
 
@@ -157,4 +169,5 @@ a{
     .dropdown_menu{
         display: block;
     }
+    
 }
