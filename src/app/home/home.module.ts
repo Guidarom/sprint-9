@@ -7,6 +7,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { InfoRecipeComponent } from './components/info-recipe/info-recipe.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { LimitWordsPipe } from '../pipes/limit-words.pipe';
 
 
 
@@ -19,7 +20,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     ProductsComponent,
     RecipesComponent,
     InfoRecipeComponent,
-  FavoritesComponent
+    FavoritesComponent,
+    LimitWordsPipe
     
   ],
   imports: [

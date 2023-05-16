@@ -23,12 +23,12 @@
             "Armar las empanadas y hornearlas en el horno hasta que estén doradas."
         ],
         "porciones": 60,
-        "tipoComida": "comida"
+        "tipoComida": "aperitivo"
     },
     {
         "id": 2,
         "nombre": "Silpancho",
-        "imagen": "../../../../assets/imagenes_recetas/silpancho-image_web.jpg",
+        "imagen": "https://drive.google.com/uc?id=1m92pDtr6RYUBc_OVq4frgnNnqIQJfEQF",
         "descripcion": "Esta receta de silpancho es una típica y contundente preparación originaria de Cochabamba, ciudad de Bolivia, aunque hoy en día podemos encontrarla en todo el país debido a su popularidad.",
         "tiempoPreparacion": 45,
         "ingredientes": [
@@ -168,7 +168,7 @@
         "id": 7,
         "nombre": "Chairo",
         "imagen": "../../../../assets/imagenes_recetas/chairo-soup.jpg",
-        "descripcion": "El chicharrón de cerdo es un plato tradicional boliviano que consiste en carne de cerdo cocida y luego frita hasta que esté dorada y crujiente. Es un plato muy sabroso y se sirve con mote y salsa criolla.",
+        "descripcion": "El chairo es una sopa que combina ingredientes típicos de la región de los Andes con alimentos del Viejo Mundo introducidos por los españoles, tales como carne de res y carne de cordero .​ Es consumido principalmente en el occidente de Bolivia, el sur del Perú y otros países en la región andina.​",
         "tiempoPreparacion": 120,
         "ingredientes": [
             "1 kg de carne de cerdo en trozos",

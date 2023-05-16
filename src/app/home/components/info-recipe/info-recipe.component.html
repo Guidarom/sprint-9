@@ -1,12 +1,14 @@
 
-<div class="container mt-3" *ngIf="currentRecipe">
-    <div class="card no-padding ">
+<div class="container mt-3" *ngIf="currentRecipe" >
+    <div class="card no-padding " >
       <div class="card-body pt-0 ps-3 ">
         <div class="row align-items-start">
           <div class="col-md-7  p-0" style="height: auto">
             <div style="position:relative">
               <div class="image-container rounded-top">
-              <img class="img-fluid no-margin " [src]="currentRecipe.imagen" alt="Recipe Image" />
+              <img class="img-fluid no-margin "
+              Onerror="this.src='../../../../assets/imagenes_recetas/plato.jpg'"
+              [src]="currentRecipe.imagen" alt="Recipe Image" />
               
               <div class="heart-container">
               
@@ -28,7 +30,7 @@
                         (click)="changeState()">{{estadoRecipe}}</button>
                 <button class="btn btn-white border-dark me-3"
                         ><i class="bi bi-share"></i></button>
-                <button class="btn btn-white border-dark me-3"
+                <button class="btn btn-white border-dark me-3" (click)="printPage()"
                         > <i class="bi bi-printer"></i></button>
                 <!-- <button class="btn btn-danger" (click)="removeFromFavs(currentRecipe.id)">Borrar</button> -->
               </div>

@@ -10,6 +10,9 @@ export class NavbarComponent {
 
 
   child:boolean=false
+  selectedOption: string= ''
+
+  
   constructor(private accountService:AccountService){}
 
   
@@ -26,6 +29,9 @@ export class NavbarComponent {
   showPanel(){
     console.log('it works')
     this.child = !this.child;
+  }
+  selectOption(option: string) {
+    this.selectedOption = option;
   }
 
 }

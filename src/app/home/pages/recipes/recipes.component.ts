@@ -51,8 +51,11 @@ export class RecipesComponent implements OnInit{
        // Aquí puedes trabajar con los datos obtenidos
     }); 
     
+    
  // Aquí puedes trabajar con los datos obtenidos
     
   }
+
+
 
 }

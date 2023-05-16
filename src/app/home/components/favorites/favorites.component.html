@@ -18,7 +18,7 @@
             *ngFor=" let recipe of currentFavList; let i=index" >
         <div class="card shadow border-bottom-0 border-white">
           <div class="row no-gutters">
-            <div class="col-8">
+            <div class="col-6 col-sm-8">
               <div class="card-body p-2">
                 <h5 class="card-title">{{recipe.nombre}}</h5>
                 <!-- <p class="card-text">{{recipe.descripcion}}</p>  -->
@@ -28,9 +28,13 @@
                   </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-sm-4">
               <div style="position: relative;">
-                <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">             
+                <img class=" img-fluid" 
+                      src='{{recipe.imagen}}' 
+                      Onerror="this.src='https://drive.google.com/uc?id=13C7lmOiHBB2XkQIevStQxy1o9jboMPB1'"
+                      class="card-img img-fluid float-right h-100" 
+                      alt="Imagen de la receta">             
                 <i class="save-icon " 
                   style="top: 4px; right: 5px;"
                 [ngClass]="{'bi-bookmark-fill pt-0': currentFavList[i].isFav, 'bi-bookmark': !currentFavList[i].isFav}" 

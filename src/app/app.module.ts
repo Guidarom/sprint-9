@@ -12,6 +12,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { IdPipe } from './pipes/id.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { IdPipe } from './pipes/id.pipe';
     HeaderComponent,
     NavbarComponent,
     IdPipe,
-   
+    
     
   ],
   imports: [
@@ -28,6 +29,7 @@ import { IdPipe } from './pipes/id.pipe';
     HttpClientModule,
     NgbModule
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })

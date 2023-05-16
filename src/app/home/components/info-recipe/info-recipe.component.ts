@@ -94,4 +94,10 @@ changeState(){
     
   }
 
+  printPage(){
+      window.print();
+
+  }
+
+
 }

@@ -22,7 +22,7 @@
             <div class="col-8">
               <div class="card-body p-2">
                 <h5 class="card-title">{{recipe.nombre}}</h5>
-                <p class="card-text">{{recipe.descripcion}}</p> 
+                <p class="card-text">{{recipe.descripcion | limitWords:20}}</p> 
                 <div class="d-flex ">
                     <p class="card-text me-3"><i class="bi bi-person"></i>{{recipe.porciones}}</p>
                     <p class="card-text"><i class="bi bi-clock"></i> {{recipe.tiempoPreparacion}} min</p>
@@ -30,7 +30,12 @@
               </div>
             </div>
             <div class="col-4 m-0 p-0">
-              <div class="recipe-image rounded-end " [ngStyle]="{'background-image': 'url(' + recipe.imagen + ')'}"></div>
+              <div class="recipe-image rounded-end "
+              [ngStyle]="{'background-image': 'url(' + recipe.imagen + ')'}"
+              >
+           
+             
+              </div>
               <!-- <div class="recipe-image" [style.background-image]="'url(' + recipe.imagen + ')'" ></div> -->
 
               <!--  <img class="recipe-img  img-fluid" src='{{recipe.imagen}}' class="card-img img-fluid float-right h-100" alt="Imagen de la receta">  -->
