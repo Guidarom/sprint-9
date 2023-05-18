@@ -7,7 +7,7 @@ export interface Recipe {
     ingredientes: string[]
     pasos: string[]
     porciones: number
-    tipoComida?: string
+    tipoComida?: string[]
     isFav?:boolean
     likes?:number
 

@@ -12,7 +12,7 @@ export class RecipesService {
   constructor ( private http:HttpClient) { 
   }
 
-  
+  public typeRecipe:string = ''
   public recipesList:any;
   public recipeCard:any;
   private recipesUrl = 'http://localhost:8000/api/recetas';
@@ -28,21 +28,32 @@ export class RecipesService {
   }
 
 
-  getRecetas(){
-    console.log('get recetas works')
-      const apiUrl = 'https://starpi.herokuapp.com/starpi'
-            fetch(apiUrl)
-            .then((response) => response.json())
-            .then((data) => {
-            this.recipesList = data
-            console.log(this.recipesList)
-          });
-  }
 
   getRecipesList(){
     return this.http.get<Recipe[]>('assets/recipes.json')
  
   } 
+/*   getSelectedRecipes(){
+    const recipes = this.http.get<Recipe[]>('assets/recipes.json')
+    if(this.typeRecipe!==''){
+      return this.recipesList = this.recipes.filter((receta:any) => receta.tipoComida.includes(this.typeRecipe));
+    }
+    if(this.typeRecipe === ''){
+      return this.recipesList = recipes
+    }
+  } */
+
+  selectedRecipes() {
+    return this.http.get<Recipe[]>('assets/recipes.json').pipe(
+      map((recipes: Recipe[]) => {
+        if (this.typeRecipe !== '') {
+          return recipes.filter((receta: Recipe) => receta.tipoComida && receta.tipoComida.includes(this.typeRecipe));
+        } else {
+          return recipes;
+        }
+      })
+    );
+  }
   
 
 /*    getRecipesList(): Observable<Recipe[]> {
@@ -55,7 +66,6 @@ export class RecipesService {
   getRecipeCard(id:number){
     this.recipesList= this.http.get(this.recipesUrl);
 }
-
 
 
 

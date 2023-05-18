@@ -1,5 +1,7 @@
 import { Component,HostListener } from '@angular/core';
-import { AccountService } from '../../_services/account.service';
+import { AccountService, } from '../../_services/account.service';
+import { RecipesService } from '../../_services/recipes.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,7 @@ export class NavbarComponent {
   selectedOption: string= ''
 
   
-  constructor(private accountService:AccountService){}
+  constructor(private accountService:AccountService,private recipesService:RecipesService){}
 
   
   get isLogged(){
@@ -27,11 +29,21 @@ export class NavbarComponent {
   }
 
   showPanel(){
-    console.log('it works')
+    console.log('it works');
     this.child = !this.child;
+    
   }
   selectOption(option: string) {
-    this.selectedOption = option;
+    this.recipesService.typeRecipe = option
+    this.recipesService.selectedRecipes()
+    .subscribe(data=>{
+      this.recipesService.recipesList=data
+    })
+    
+  }
+  selectDown(option:string){
+    this.selectOption(option);
+    this.child = !this.child
   }
 
 }

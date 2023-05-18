@@ -9,6 +9,10 @@ p{
     /* width: 100%; */
     /* padding: 20px; */
 }
+/* .card-body{
+    padding-right: 50px!important;
+    margin-right: 50px!important;
+} */
 .recipe-image{
     background-repeat: no-repeat;
     min-height: 150px;

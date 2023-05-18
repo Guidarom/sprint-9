@@ -17,16 +17,16 @@ export class AccountService {
       this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
       this.user = this.userSubject.asObservable(); }
 
-  isLogged:boolean=false
-  adminSession: boolean = false;
-
+  public isLogged:boolean=false
+  public adminSession: boolean = false;
+ 
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
   
-  usersList:User[]=[]
-  redirectUrl:any =''
-  private apiUserUrl='http://localhost:8000'
-  private usersUrl= 'http://localhost:8000/api/usuarios?desde=0'
+  usersList:User[]=[];
+  redirectUrl:any ='';
+  private apiUserUrl='http://localhost:8000';
+  private usersUrl= 'http://localhost:8000/api/usuarios?desde=0';
 
   loginOut(){
     this.isLogged=false

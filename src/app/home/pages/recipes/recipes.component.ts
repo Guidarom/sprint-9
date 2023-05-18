@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../../../_services/recipes.service';
 import { HttpClient } from '@angular/common/http';
+import { Recipe } from 'src/app/_models/recipe';
 
 
 @Component({
@@ -11,8 +12,15 @@ import { HttpClient } from '@angular/common/http';
 export class RecipesComponent implements OnInit{
 
   public loading:boolean =false;
+  public selectedRecipes: any;
+
 
   constructor(private recipesService:RecipesService, private http:HttpClient){}
+
+  get typeRecipe(){
+    return this.recipesService.typeRecipe
+  }
+
 
   get recipesList(){
     return this.recipesService.recipesList
@@ -22,8 +30,7 @@ export class RecipesComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
-    this.getRecipesList()
+    this.selectOption(this.typeRecipe)
     
     
   }
@@ -45,16 +52,34 @@ export class RecipesComponent implements OnInit{
     this.recipesService.getRecipesList()
     .subscribe(data => {
       this.recipesList=data
+      if(this.typeRecipe!==''){
+        this.selectedRecipes = this.recipesList.filter((receta:any) => receta.tipoComida.includes(this.typeRecipe));
+      }
+      if(this.typeRecipe === ''){
+        this.selectedRecipes = this.recipesList
+      }
+      
+      
       if(data){
         this.loading=true
-      }
+      }     
        // Aquí puedes trabajar con los datos obtenidos
-    }); 
-    
-    
+    });    
  // Aquí puedes trabajar con los datos obtenidos
+  }
+
+  selectOption(option: string) {
+    this.recipesService.typeRecipe = option
+    this.recipesService.selectedRecipes()
+    .subscribe(data=>{
+      this.recipesList=data
+      if(data){
+        this.loading=true
+      }  
+    })
     
   }
+  
 
 
 

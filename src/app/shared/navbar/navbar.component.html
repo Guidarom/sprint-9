@@ -15,10 +15,10 @@
                     Recetas
                 </a>
                 <div class="dropdown-menu m-2 p-2" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('Sopas')"> Todos</a>
-                    <a class="dropdown-item" [routerLink]="['aperitivos']" (click)="selectOption('Aperitivos')"> Aperitivos</a>
-                    <a class="dropdown-item" [routerLink]="['segundos']" (click)="selectOption('Segundos')"> Segundos</a>
-                    <a class="dropdown-item" [routerLink]="['sopas']" (click)="selectOption('Sopas')"> Sopas</a>
+                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('')"> Todos</a>
+                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('aperitivo')"> Aperitivos</a>
+                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('segundo')"> Segundos</a>
+                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('sopa')"> Sopas</a>
                 </div>
             </li>
             
@@ -64,7 +64,7 @@
             <div class="col-12 ">
                 <div  *ngIf="child" class="dropdown_menu " >
                     <li><a [routerLink]="['']" (click)="showPanel()" >Home</a></li>
-                    <li><a [routerLink]="['recipes']" (click)="showPanel()">Recetas</a></li>
+                    <li><a [routerLink]="['recipes']" (click)="selectDown('')">Recetas</a></li>
                     <li><a [routerLink]="['favorites']" (click)="showPanel()">Favoritos</a></li>
                     <li><a [routerLink]="['products']" (click)="showPanel()">Productos típicos</a></li>
                     <li *ngIf="!isLogged"><a [routerLink]="['account/login']" class="action_btn" (click)="showPanel()" >Login</a></li>
