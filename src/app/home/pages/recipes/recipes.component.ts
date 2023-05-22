@@ -52,6 +52,8 @@ export class RecipesComponent implements OnInit{
     this.recipesService.getRecipesList()
     .subscribe(data => {
       this.recipesList=data
+
+      
       if(this.typeRecipe!==''){
         this.selectedRecipes = this.recipesList.filter((receta:any) => receta.tipoComida.includes(this.typeRecipe));
       }

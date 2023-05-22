@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 /* import  recipesJson from '../../assets/recipes.json' */
-import { Recipe } from '../_models/recipe';
+import { Recipe, respRecipe } from '../_models/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class RecipesService {
   private recipesUrl = 'http://localhost:8000/api/recetas';
   private jsonRecipes = 'assets/recipes.json'
   //private recipesUrl =  `https://starpi.herokuapp.com/starpi/starships`
-  private urlApiNico= 'http://localhost:3000/api/recipes'
+  private urlApiNico= 'http://localhost:3000/recipes'
 
 
   getRecipes(){
@@ -29,10 +29,17 @@ export class RecipesService {
 
 
 
-  getRecipesList(){
-    return this.http.get<Recipe[]>('assets/recipes.json')
- 
-  } 
+ /*  getRecipesList():Observable<Recipe[]>{
+    return this.http.get<Recipe[]>(this.recipesUrl)
+    
+  }  */
+
+  getRecipesList(): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(this.recipesUrl).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
 /*   getSelectedRecipes(){
     const recipes = this.http.get<Recipe[]>('assets/recipes.json')
     if(this.typeRecipe!==''){
@@ -44,8 +51,9 @@ export class RecipesService {
   } */
 
   selectedRecipes() {
-    return this.http.get<Recipe[]>('assets/recipes.json').pipe(
-      map((recipes: Recipe[]) => {
+    return this.http.get<Recipe[]>(this.recipesUrl).pipe(
+      map((response: any) => {
+        const recipes = response.data
         if (this.typeRecipe !== '') {
           return recipes.filter((receta: Recipe) => receta.tipoComida && receta.tipoComida.includes(this.typeRecipe));
         } else {

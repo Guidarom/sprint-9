@@ -12,3 +12,8 @@ export interface Recipe {
     likes?:number
 
 }
+
+export interface respRecipe{
+    success: boolean
+    data: any[]
+}
