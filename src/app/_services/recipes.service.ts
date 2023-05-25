@@ -36,20 +36,32 @@ export class RecipesService {
 
   getRecipesList(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.recipesUrl).pipe(
-      map((response: any) => response.data)
+      //map((response: any) => response) //si es un archivo json
+      map((response: any) => response.data) // si es de la api
     );
   }
 
-/*   getSelectedRecipes(){
-    const recipes = this.http.get<Recipe[]>('assets/recipes.json')
-    if(this.typeRecipe!==''){
-      return this.recipesList = this.recipes.filter((receta:any) => receta.tipoComida.includes(this.typeRecipe));
-    }
-    if(this.typeRecipe === ''){
-      return this.recipesList = recipes
-    }
-  } */
 
+  //Este codigo funciona con el archivo json
+  /*  selectedRecipes(){
+    return this.http.get<Recipe[]>('assets/recipes.json').pipe(
+
+      map((response:any)=>{
+        const recipes = response
+        if(this.typeRecipe!==''){
+          return this.recipesList = recipes.filter((receta:any) =>receta.tipoComida && receta.tipoComida.includes(this.typeRecipe));
+        }
+        if(this.typeRecipe === ''){
+          return this.recipesList = recipes
+        }
+
+      })
+    )
+    
+  }   */
+
+
+  // este codigo funciona con la api de nico
   selectedRecipes() {
     return this.http.get<Recipe[]>(this.recipesUrl).pipe(
       map((response: any) => {
@@ -61,7 +73,7 @@ export class RecipesService {
         }
       })
     );
-  }
+  }  
   
 
 /*    getRecipesList(): Observable<Recipe[]> {

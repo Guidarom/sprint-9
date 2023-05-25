@@ -24,12 +24,12 @@ export class NavbarComponent {
 
   loginOut(){
     console.log('logingout works');
+    this.accountService.logout();
     this.accountService.loginOut();
     this.showPanel()
   }
 
   showPanel(){
-    console.log('it works');
     this.child = !this.child;
     
   }
@@ -45,5 +45,6 @@ export class NavbarComponent {
     this.selectOption(option);
     this.child = !this.child
   }
+
 
 }

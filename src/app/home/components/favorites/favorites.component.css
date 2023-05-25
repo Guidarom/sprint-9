@@ -13,4 +13,8 @@
 .custom-spinner {
     width: 1.5rem;
     height: 1.5rem;
-  }
+}
+.card-img-top {
+    height: 120px; /* Ajusta aquí la altura deseada */
+    object-fit: cover;
+}

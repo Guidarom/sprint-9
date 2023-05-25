@@ -5,13 +5,14 @@ import { ProductsComponent } from './pages/products/products.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { InfoRecipeComponent } from './components/info-recipe/info-recipe.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { AuthGuard } from '../_helpers/guards/auth.guard';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'products',component:ProductsComponent},
   {path:'recipes',component:RecipesComponent},
-  {path:'favorites',component:FavoritesComponent},
+  {path:'favorites',component:FavoritesComponent,canActivate:[AuthGuard]},
   {path:'info-recipe/:id',component:InfoRecipeComponent},
 
 ];

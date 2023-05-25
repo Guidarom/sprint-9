@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../_services/account.service';
 import { first } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
     this.redirectUrl = this.activatedRoute.snapshot.queryParamMap.get('redirectUrl')||'';
     this.accountService.getListFromLocalStorage('list');
     
-    console.log(this.redirectUrl)
   }
 
 
@@ -66,24 +66,46 @@ export class LoginComponent implements OnInit {
     const currentEmail = this.signInForm.value.email
     const currentPassword = this.signInForm.value.password
 
-    
+    if(!this.signInForm.valid){
+      
+    }
 
     if(this.signInForm.valid){
       this.accountService.login(currentEmail,currentPassword)
       .pipe(first())
       .subscribe({
-          next: () => {
+          next: (resp) => {
+
               // get return url from route parameters or default to '/'
               const returnUrl = this.activatedRoute.snapshot.queryParams[''] || '/';
               this.router.navigate(['recipes']);
-              this.accountService.logginTrue() 
+              this.accountService.logginTrue();
+              console.log(resp)
+              Swal.fire({
+                icon: 'success',
+                title: 'Bienvenido ',
+                text: `${resp?.nombre}`,
+                showConfirmButton: false,
+                timer: 2500
+               
+              }) 
           },
           error: error => {
+            //aqui cojemos el error para mostrar el mensaje en pantalla...no se si es correcto que este aqui el codigo
+              Swal.fire({
+              icon: 'error',
+              title: 'Error...',
+              text: 'El usuario y/o contraseña no es válido',
+              showConfirmButton: false,
+              timer: 4500,
+            }) 
               this.error = error;
               
           }
+          
       });
-
+      
+     
 
       /* const foundUser= this.usersList.find((e:any)=>currentUser.email ===e.email)
       foundUser?.password === currentUser.password? (alert(`Welcome ${foundUser?.nombre}`),
@@ -91,6 +113,7 @@ export class LoginComponent implements OnInit {
       (this.accountService.logginTrue()))      
       : alert('try it again!') */
     }
+    
     this.signInForm.markAllAsTouched()  
   }
 

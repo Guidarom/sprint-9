@@ -17,13 +17,13 @@
                 <div class="dropdown-menu m-2 p-2" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('')"> Todos</a>
                     <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('aperitivo')"> Aperitivos</a>
-                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('segundo')"> Segundos</a>
+                    <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('segundo')"> Platos principales</a>
                     <a class="dropdown-item" [routerLink]="['recipes']" (click)="selectOption('sopa')"> Sopas</a>
                 </div>
             </li>
             
             
-            <li><a [routerLink]="['favorites']">Favoritos</a></li>
+            <li *ngIf="isLogged"><a [routerLink]="['favorites']">Favoritos</a></li>
             <li><a [routerLink]="['products']">Productos típicos</a></li>
             <li><a [routerLink]="['']"><i class="bi bi-search"></i></a></li>
         </ul>

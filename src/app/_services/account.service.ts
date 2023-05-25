@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { User } from '../_models/user';
+import { AuthResponse, User } from '../_models/user';
 
-/* import { environment } from 'src/environments/environment'; */
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, map } from 'rxjs';
+import { environment } from 'src/environments/environments';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+
+  private baseUrl:string ='http//localhost:8000'
 
   constructor(
     private router: Router, 
@@ -25,8 +28,8 @@ export class AccountService {
   
   usersList:User[]=[];
   redirectUrl:any ='';
-  private apiUserUrl='http://localhost:8000';
-  private usersUrl= 'http://localhost:8000/api/usuarios?desde=0';
+ 
+  private usersUrl= 'http://localhost:8000/api/usuarios?desde=0'
 
   loginOut(){
     this.isLogged=false
@@ -49,18 +52,28 @@ export class AccountService {
   }
 
     register(user: User) {
-        return this.http.post(`${this.apiUserUrl}/api/usuarios`, user);
+        return this.http.post(`http://localhost:8000/api/usuarios`, user);
     }
 
     login(email: string, password: string) {
-      return this.http.post<User>(`${this.apiUserUrl}/api/auth/login`, { email, password })
-          .pipe(map(user => {
+
+      const url = `http://localhost:8000/api/auth/login`;
+      const body = { email, password };
+
+      return this.http.post<AuthResponse>(url, body)
+      
+          .pipe(map(resp => {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
-              localStorage.setItem('user', JSON.stringify(user));
-              localStorage.setItem('token', user.token!);
-              this.userSubject.next(user);
-              console.log('usuario logeado')
-              return user;
+             
+              if(resp.usuario){
+                localStorage.setItem('user', JSON.stringify(resp));
+                localStorage.setItem('token', resp.token!);
+                this.userSubject.next(resp.usuario);
+                console.log('usuario logeado')
+              }
+              
+              
+              return resp.usuario;
           }));
   }
 
@@ -77,13 +90,16 @@ export class AccountService {
     delete(id: number) {
       const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '' )
-      return this.http.delete(`${this.apiUserUrl}/api/usuarios/${id}`,{ headers })
+      return this.http.delete(`http://localhost:8000/api/usuarios/${id}`,{ headers })
     }
 
   getAll(): Observable <User[]> {
+    
     return this.http.get<any>(this.usersUrl).pipe(
       map(response => response.usuarios)
+      
     );
+    
   } 
 
 }

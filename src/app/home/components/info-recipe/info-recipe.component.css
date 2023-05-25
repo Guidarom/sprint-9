@@ -99,6 +99,11 @@
       .ps-3 {
         padding-left: 11px!important;
     }
+
+    .link-style {
+      text-decoration: none; /* Quita el subrayado */
+      color: black; /* Cambia el color del texto */
+    }
     
 
 

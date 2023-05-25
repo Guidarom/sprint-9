@@ -6,5 +6,10 @@ export interface User {
         estado?: boolean;
         rol?: string;
         token?: string;
-    
+}
+
+export interface AuthResponse {
+        usuario?:  User;
+        token?: string;
+        msg?:   string;
 }

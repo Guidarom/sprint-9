@@ -43,7 +43,7 @@ export class FavoritesComponent implements OnInit {
       // this.realFavList = this.recipesList.filter((data:any)=> this.favList.includes(data.id))
       this.printFavList.subscribe(array => {      
       this.currentFavList = array
-      console.log(array)})
+      })
       this.printFavList.next(this.recipesList.filter(data=> this.favList.includes(data.id)))
       this.progress=this.favList.length
       this.currentFavList.forEach(e => e.isFav = true);

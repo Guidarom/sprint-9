@@ -81,7 +81,7 @@ changeState(){
   }
 
   onHeartClick(){
-    console.log('works')
+    
     this.heartClicked = !this.heartClicked;
     if(this.heartClicked){
       this.currentRecipe.likes += 1
@@ -90,7 +90,7 @@ changeState(){
     if(!this.heartClicked){
       this.currentRecipe.likes -=1
     }
-    console.log(this.currentRecipe.likes)
+    
     
   }
 

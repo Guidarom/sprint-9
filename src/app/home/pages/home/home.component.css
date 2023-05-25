@@ -22,3 +22,27 @@
     width: 100%;
     /* padding: 20px; */
 }
+
+
+
+.trending-cards {
+    position: relative;
+}
+
+.titles {
+    color: aliceblue;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+.card-img-top {
+    height: 150px; /* Ajusta aquí la altura deseada */
+    object-fit: cover;
+}
+
