@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
       <!-- Repeat this card block for each recipe in your JSON file -->
       <div class="col-12  col-lg-8 mb-4 card-recipe"
-            [routerLink]="['/info-recipe/' ,recipe.id]" 
+            [routerLink]="['/recipe/' ,recipe.id]" 
             *ngFor=" let recipe of recipesList; let i=index" >
         <div class="card shadow border-bottom-0 border-white">
           <div class="row no-gutters">
