@@ -14,7 +14,8 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   signInForm:FormGroup;
-  error = '';
+  error           = '';
+  submitted = false;
  // private redirectUrl:any ='';
 
   get redirectUrl(){
@@ -35,8 +36,6 @@ export class LoginComponent implements OnInit {
       email:['',Validators.compose([Validators.email,Validators.required])],
       password:['',Validators.compose([Validators.minLength(6),Validators.required],)]
     })
-
-
   }
   required( field : string){
     return this.signInForm.controls[field].errors && this.signInForm.controls[field].touched
@@ -58,16 +57,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    const currentUser: User ={
-      email:this.signInForm.value.email,
-      password:this.signInForm.value.password
-    }
+    this.submitted = true;
 
-    const currentEmail = this.signInForm.value.email
-    const currentPassword = this.signInForm.value.password
+    let currentEmail = this.signInForm.value.email
+    let currentPassword = this.signInForm.value.password
 
     if(!this.signInForm.valid){
-      
+      this.signInForm.markAllAsTouched() 
+      return
     }
 
     if(this.signInForm.valid){

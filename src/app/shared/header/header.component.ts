@@ -18,6 +18,13 @@ export class HeaderComponent {
   loginOut(){
     console.log('logingout works')
    // return this.userService.loginOut()
+
   }
+
+
+
+
+
+  
 
 }

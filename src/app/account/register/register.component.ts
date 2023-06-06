@@ -12,7 +12,7 @@ import { User } from '../../_models/user';
 export class RegisterComponent {
 
   signupForm:FormGroup;
-
+  submitted = false;
 
 
   constructor(
@@ -22,9 +22,9 @@ export class RegisterComponent {
     private activateRoute:ActivatedRoute
   ){
     this.signupForm=this.builder.group({
-      nombre:[''],
+      nombre:['',Validators.required],
       email:['',Validators.compose([Validators.email,Validators.required])],
-      password:['',Validators.compose([Validators.minLength(6),Validators.required],)]
+      password:['',Validators.compose([Validators.minLength(6),Validators.required])]
     })
 
   }
@@ -44,6 +44,7 @@ export class RegisterComponent {
     }
 
   send(){
+    this.submitted = true;
     console.log('send works')
       const newUser: User={
         //id: this.usersList.length +1,

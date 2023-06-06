@@ -22,6 +22,8 @@
                                     formControlName="nombre"
                                     class="form-control" 
                                     placeholder="your name" >
+                                    <span class="form-text text-danger mt-0 mb-0"
+                                          *ngIf="required('nombre') && submitted">Este campo no tiene que estar vacío</span>
                                     
                         </div>
                         <div class="form-group my-3">
@@ -31,7 +33,7 @@
                                     class="form-control" 
                                     placeholder="exemple@mail.com" >
                                     <span class="form-text text-danger mt-0 mb-0"
-                                          *ngIf="required('email')">Por favor introduzca un email correcto</span>
+                                          *ngIf="required('email') && submitted">Por favor introduzca un email correcto</span>
                                     
                         </div>
                         <div class="form-group my-3">
@@ -41,7 +43,7 @@
                                     class="form-control" 
                                     placeholder="Password" >
                                     <span class="form-text text-danger mt-0 mb-0"
-                                          *ngIf="required('password')">La contraseña tiene que tener como mínimo 6 caracteres</span>
+                                          *ngIf="required('password') && submitted">La contraseña tiene que tener como mínimo 6 caracteres</span>
                         </div>
                         <div class="text-center col-12">
                             <button  type="submit" class="btn btn-success btn-block" >Create Account</button>
